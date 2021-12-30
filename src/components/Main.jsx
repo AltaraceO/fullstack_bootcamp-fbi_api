@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const state = "va";
-const year = 2018;
+// const state = "va";
+const crime = "burglary";
+const year = 2020;
 
-export const Main = () => {
+export const Main = ({ state }) => {
   const [data, setData] = useState("");
   useEffect(() => {
     const getFbi = async () => {
@@ -13,19 +14,24 @@ export const Main = () => {
       );
       setData(gotData.data.results);
     };
-    getFbi();
-  }, []);
+
+    if (state.length > 1) {
+      getFbi();
+    }
+  }, [state]);
 
   const renderItems = () => {
     console.log(data);
     const newArr = [];
 
     for (let item in data[0]) {
-      newArr.push(
-        <div key={data[0][item]}>
-          {item} {data[0][item]}
-        </div>
-      );
+      if (item === crime) {
+        newArr.push(
+          <div key={data[0][item]}>
+            {item} {data[0][item]}
+          </div>
+        );
+      }
     }
 
     return newArr.map((item) => {

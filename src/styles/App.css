@@ -1,4 +1,6 @@
 .app {
   display: inline-block;
 }
-/*# sourceMappingURL=App.css.map */
+.main-test {
+  display: flex;
+}
