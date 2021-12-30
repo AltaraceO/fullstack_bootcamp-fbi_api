@@ -14,8 +14,7 @@ function App() {
       setStateTwo(e.target.value);
     }
   };
-  // console.log(stateOne);
-  // console.log(stateTwo);
+
   return (
     <div className="main-test">
       <div>

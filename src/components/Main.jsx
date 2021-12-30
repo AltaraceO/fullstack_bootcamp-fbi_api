@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// const state = "va";
 const crime = "burglary";
 const year = 2020;
 
@@ -21,7 +20,6 @@ export const Main = ({ state }) => {
   }, [state]);
 
   const renderItems = () => {
-    console.log(data);
     const newArr = [];
 
     for (let item in data[0]) {
