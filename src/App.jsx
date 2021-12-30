@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/App.css";
 import { Main } from "./components/Main";
-import { useState } from "react/cjs/react.development";
 
 function App() {
   const [stateOne, setStateOne] = useState("");
