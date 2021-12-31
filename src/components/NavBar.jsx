@@ -4,10 +4,19 @@ import React from "react";
 
 export const NavBar = () => {
   return (
-    <div>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/search/">Search</Link>
+    <div className="ui secondary  menu">
+      <Link className="item" to="/">
+        Home
+      </Link>
+
+      <Link className="item" to="/search/">
+        Search
+      </Link>
+      <Link className="item" to="/signup/">
+        Sign up
+      </Link>
+      <div className="right menu">
+        <div className="ui item active ">Logout</div>
       </div>
     </div>
   );
