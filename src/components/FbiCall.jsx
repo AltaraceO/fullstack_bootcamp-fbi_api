@@ -21,7 +21,6 @@ export const FbiCall = ({ state }) => {
 
   const renderItems = () => {
     const newArr = [];
-
     for (let item in data[0]) {
       if (item === crime) {
         newArr.push(
@@ -36,7 +35,7 @@ export const FbiCall = ({ state }) => {
       return item;
     });
   };
-
+  // console.log(data);
   return (
     <div>
       <div>{renderItems()}</div>

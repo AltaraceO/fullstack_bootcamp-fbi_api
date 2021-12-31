@@ -1,23 +1,24 @@
 import React from "react";
-import allStates from "../data";
+import { allStates, crimeCat } from "../data";
 
-export const Dropdown = () => {
-  const allOptions = allStates.map((state) => {
+export const Dropdown = ({ func, option, item }) => {
+  const searchItem = item ? allStates : crimeCat;
+  const allOptions = searchItem.map((state) => {
     return (
-      <option key={state.abbreviation} value={state.abbreviation}>
+      <option key={state.category} value={state.category}>
         {state.name}
       </option>
     );
   });
 
   const onHandleChange = (e) => {
-    console.log(e.target.value);
+    func(e.target.value, option);
   };
 
   return (
     <div>
       <select className="ui dropdown myDropdown" onChange={onHandleChange}>
-        <option value="">State</option>
+        <option value="">Select</option>
         {allOptions}
       </select>
     </div>

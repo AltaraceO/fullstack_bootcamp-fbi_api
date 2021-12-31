@@ -1,240 +1,277 @@
-const allStates = [
+export const allStates = [
   {
     name: "Alabama",
-    abbreviation: "AL",
+    category: "AL",
   },
   {
     name: "Alaska",
-    abbreviation: "AK",
+    category: "AK",
   },
   {
     name: "American Samoa",
-    abbreviation: "AS",
+    category: "AS",
   },
   {
     name: "Arizona",
-    abbreviation: "AZ",
+    category: "AZ",
   },
   {
     name: "Arkansas",
-    abbreviation: "AR",
+    category: "AR",
   },
   {
     name: "California",
-    abbreviation: "CA",
+    category: "CA",
   },
   {
     name: "Colorado",
-    abbreviation: "CO",
+    category: "CO",
   },
   {
     name: "Connecticut",
-    abbreviation: "CT",
+    category: "CT",
   },
   {
     name: "Delaware",
-    abbreviation: "DE",
+    category: "DE",
   },
   {
     name: "District Of Columbia",
-    abbreviation: "DC",
+    category: "DC",
   },
   {
     name: "Federated States Of Micronesia",
-    abbreviation: "FM",
+    category: "FM",
   },
   {
     name: "Florida",
-    abbreviation: "FL",
+    category: "FL",
   },
   {
     name: "Georgia",
-    abbreviation: "GA",
+    category: "GA",
   },
   {
     name: "Guam",
-    abbreviation: "GU",
+    category: "GU",
   },
   {
     name: "Hawaii",
-    abbreviation: "HI",
+    category: "HI",
   },
   {
     name: "Idaho",
-    abbreviation: "ID",
+    category: "ID",
   },
   {
     name: "Illinois",
-    abbreviation: "IL",
+    category: "IL",
   },
   {
     name: "Indiana",
-    abbreviation: "IN",
+    category: "IN",
   },
   {
     name: "Iowa",
-    abbreviation: "IA",
+    category: "IA",
   },
   {
     name: "Kansas",
-    abbreviation: "KS",
+    category: "KS",
   },
   {
     name: "Kentucky",
-    abbreviation: "KY",
+    category: "KY",
   },
   {
     name: "Louisiana",
-    abbreviation: "LA",
+    category: "LA",
   },
   {
     name: "Maine",
-    abbreviation: "ME",
+    category: "ME",
   },
   {
     name: "Marshall Islands",
-    abbreviation: "MH",
+    category: "MH",
   },
   {
     name: "Maryland",
-    abbreviation: "MD",
+    category: "MD",
   },
   {
     name: "Massachusetts",
-    abbreviation: "MA",
+    category: "MA",
   },
   {
     name: "Michigan",
-    abbreviation: "MI",
+    category: "MI",
   },
   {
     name: "Minnesota",
-    abbreviation: "MN",
+    category: "MN",
   },
   {
     name: "Mississippi",
-    abbreviation: "MS",
+    category: "MS",
   },
   {
     name: "Missouri",
-    abbreviation: "MO",
+    category: "MO",
   },
   {
     name: "Montana",
-    abbreviation: "MT",
+    category: "MT",
   },
   {
     name: "Nebraska",
-    abbreviation: "NE",
+    category: "NE",
   },
   {
     name: "Nevada",
-    abbreviation: "NV",
+    category: "NV",
   },
   {
     name: "New Hampshire",
-    abbreviation: "NH",
+    category: "NH",
   },
   {
     name: "New Jersey",
-    abbreviation: "NJ",
+    category: "NJ",
   },
   {
     name: "New Mexico",
-    abbreviation: "NM",
+    category: "NM",
   },
   {
     name: "New York",
-    abbreviation: "NY",
+    category: "NY",
   },
   {
     name: "North Carolina",
-    abbreviation: "NC",
+    category: "NC",
   },
   {
     name: "North Dakota",
-    abbreviation: "ND",
+    category: "ND",
   },
   {
     name: "Northern Mariana Islands",
-    abbreviation: "MP",
+    category: "MP",
   },
   {
     name: "Ohio",
-    abbreviation: "OH",
+    category: "OH",
   },
   {
     name: "Oklahoma",
-    abbreviation: "OK",
+    category: "OK",
   },
   {
     name: "Oregon",
-    abbreviation: "OR",
+    category: "OR",
   },
   {
     name: "Palau",
-    abbreviation: "PW",
+    category: "PW",
   },
   {
     name: "Pennsylvania",
-    abbreviation: "PA",
+    category: "PA",
   },
   {
     name: "Puerto Rico",
-    abbreviation: "PR",
+    category: "PR",
   },
   {
     name: "Rhode Island",
-    abbreviation: "RI",
+    category: "RI",
   },
   {
     name: "South Carolina",
-    abbreviation: "SC",
+    category: "SC",
   },
   {
     name: "South Dakota",
-    abbreviation: "SD",
+    category: "SD",
   },
   {
     name: "Tennessee",
-    abbreviation: "TN",
+    category: "TN",
   },
   {
     name: "Texas",
-    abbreviation: "TX",
+    category: "TX",
   },
   {
     name: "Utah",
-    abbreviation: "UT",
+    category: "UT",
   },
   {
     name: "Vermont",
-    abbreviation: "VT",
+    category: "VT",
   },
   {
     name: "Virgin Islands",
-    abbreviation: "VI",
+    category: "VI",
   },
   {
     name: "Virginia",
-    abbreviation: "VA",
+    category: "VA",
   },
   {
     name: "Washington",
-    abbreviation: "WA",
+    category: "WA",
   },
   {
     name: "West Virginia",
-    abbreviation: "WV",
+    category: "WV",
   },
   {
     name: "Wisconsin",
-    abbreviation: "WI",
+    category: "WI",
   },
   {
     name: "Wyoming",
-    abbreviation: "WY",
+    category: "WY",
   },
 ];
 
-export default allStates;
+export const crimeCat = [
+  {
+    name: "Aggravated Assult",
+    category: "aggravated_assault",
+  },
+  {
+    name: "Arson",
+    category: "arson",
+  },
+  {
+    name: "Burglary",
+    category: "burglary",
+  },
+  {
+    name: "Homicide",
+    category: "homicide",
+  },
+  {
+    name: "Larceny",
+    category: "larceny",
+  },
+  {
+    name: "Motor Vehicle Theft",
+    category: "motor_vehicle_theft",
+  },
+  {
+    name: "Property Crime",
+    category: "property_crime",
+  },
+  {
+    name: "Robbery",
+    category: "robbery",
+  },
+  {
+    name: "Violent Crime",
+    category: "violent_crime",
+  },
+];
