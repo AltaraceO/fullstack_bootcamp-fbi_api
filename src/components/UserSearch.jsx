@@ -7,6 +7,7 @@ export const UserSearch = () => {
   const [stateTwo, setStateTwo] = useState("");
   const [crime, setCrime] = useState("");
   const [year, setYear] = useState("");
+  const [search, setSearch] = useState(false);
 
   const onHandleChange = (e, option) => {
     switch (option) {
@@ -32,9 +33,13 @@ export const UserSearch = () => {
   };
 
   const checkFields = () => {
-    if (stateOne && stateTwo && crime) {
+    if (stateOne && stateTwo && crime && year) {
       return true;
     }
+  };
+
+  const onSearchClick = () => {
+    setSearch(true);
   };
 
   // console.log(typeof checkFields());
@@ -61,11 +66,18 @@ export const UserSearch = () => {
             <input type="text" onChange={onInputChange} value={year} />
           </div>
         </div>
-        <div className={`ui  ${!checkFields() && "disabled"} basic button`}>
+        <div
+          className={`ui  ${!checkFields() && "disabled"} basic button`}
+          onClick={onSearchClick}
+        >
           Submit
         </div>
-        <FbiCall state={stateTwo} />
-        <FbiCall state={stateOne} />
+        {search && (
+          <div>
+            <FbiCall state={stateTwo} crime={crime} year={year} />
+            <FbiCall state={stateOne} crime={crime} year={year} />
+          </div>
+        )}
       </div>
     </div>
   );

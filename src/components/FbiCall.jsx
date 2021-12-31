@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// const crime = "burglary";
+// const year = 2020;
 
-const crime = "burglary";
-const year = 2020;
-
-export const FbiCall = ({ state }) => {
+export const FbiCall = ({ state, crime, year }) => {
   const [data, setData] = useState("");
   useEffect(() => {
     const getFbi = async () => {
@@ -17,7 +16,7 @@ export const FbiCall = ({ state }) => {
     if (state.length > 1) {
       getFbi();
     }
-  }, [state]);
+  }, [state, year]);
 
   const renderItems = () => {
     const newArr = [];
