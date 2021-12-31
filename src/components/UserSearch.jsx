@@ -72,9 +72,13 @@ export const UserSearch = () => {
           Submit
         </div>
         {search && (
-          <div>
-            <FbiCall state={stateTwo} crime={crime} year={year} />
-            <FbiCall state={stateOne} crime={crime} year={year} />
+          <div className="ui horizontal segments">
+            <div className="ui segment">
+              <FbiCall state={stateOne} crime={crime} year={year} />
+            </div>
+            <div className="ui segment">
+              <FbiCall state={stateTwo} crime={crime} year={year} />
+            </div>
           </div>
         )}
       </div>
