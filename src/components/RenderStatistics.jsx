@@ -1,6 +1,6 @@
 import React from "react";
 
-export const RenderStatistics = ({ data, crime }) => {
+export const RenderStatistics = ({ data, crime, year }) => {
   const renderItems = () => {
     console.log(data);
     const newArr = [];
@@ -13,7 +13,9 @@ export const RenderStatistics = ({ data, crime }) => {
             </div>
             <div className="statistic">
               <div className="value">{data[0][item]}</div>
-              <div className="label">{item}s</div>
+              <div className="label">
+                {item}s in {year}
+              </div>
             </div>
           </div>
         );

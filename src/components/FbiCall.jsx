@@ -26,7 +26,7 @@ export const FbiCall = ({ state, crime, year }) => {
         {spinner ? (
           <div className="ui active centered inline loader"></div>
         ) : (
-          <RenderStatistics data={data} crime={crime} />
+          <RenderStatistics data={data} crime={crime} year={year} />
         )}
       </div>
     </div>
