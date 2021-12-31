@@ -28,7 +28,6 @@ export const UserSearch = () => {
   };
 
   const onInputChange = (e) => {
-    console.log(e.target.value);
     setYear(e.target.value);
   };
 
@@ -39,7 +38,7 @@ export const UserSearch = () => {
   };
 
   const onSearchClick = () => {
-    setSearch(true);
+    setSearch(!search);
   };
 
   // console.log(typeof checkFields());
