@@ -1,38 +1,25 @@
 import React, { useState } from "react";
 import "./styles/App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
+import { UserSearch } from "./components/UserSearch";
 import { Main } from "./components/Main";
 
 function App() {
-  const [stateOne, setStateOne] = useState("");
-  const [stateTwo, setStateTwo] = useState("");
-
-  const onHandleChange = (e) => {
-    if (e.target.name === "One") {
-      setStateOne(e.target.value);
-    } else {
-      setStateTwo(e.target.value);
-    }
-  };
-
   return (
-    <div className="main-test">
+    <div>
       <div>
-        <input
-          onChange={onHandleChange}
-          type="text"
-          value={stateOne}
-          name="One"
-        />
-        <Main state={stateOne} />
-      </div>
-      <div>
-        <input
-          onChange={onHandleChange}
-          type="text"
-          value={stateTwo}
-          name="Two"
-        />
-        <Main state={stateTwo} />
+        <BrowserRouter>
+          <div>
+            <NavBar />
+            <Route exact path="/">
+              <Main />
+            </Route>
+            <Route exact path="/search/">
+              <UserSearch />
+            </Route>
+          </div>
+        </BrowserRouter>
       </div>
     </div>
   );
