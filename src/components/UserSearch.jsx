@@ -6,6 +6,7 @@ export const UserSearch = () => {
   const [stateOne, setStateOne] = useState("");
   const [stateTwo, setStateTwo] = useState("");
   const [crime, setCrime] = useState("");
+  const [year, setYear] = useState("");
 
   const onHandleChange = (e, option) => {
     switch (option) {
@@ -25,13 +26,18 @@ export const UserSearch = () => {
     }
   };
 
+  const onInputChange = (e) => {
+    console.log(e.target.value);
+    setYear(e.target.value);
+  };
+
   const checkFields = () => {
     if (stateOne && stateTwo && crime) {
       return true;
     }
   };
 
-  console.log(typeof checkFields());
+  // console.log(typeof checkFields());
   return (
     <div>
       <div className="ui large form">
@@ -52,31 +58,15 @@ export const UserSearch = () => {
           </div>
           <div className="field">
             <label>Year</label>
-            <input type="text" value="poop" />
+            <input type="text" onChange={onInputChange} value={year} />
           </div>
         </div>
         <div className={`ui  ${!checkFields() && "disabled"} basic button`}>
           Submit
         </div>
+        <FbiCall state={stateTwo} />
+        <FbiCall state={stateOne} />
       </div>
-
-      {/* <div>
-        <div>
-          <Dropdown func={onHandleChange} option="one" item={true} />
-          <FbiCall state={stateOne} />
-        </div>
-        <div>
-          <Dropdown func={onHandleChange} option="two" item={true} />
-          <FbiCall state={stateTwo} />
-        </div>
-        <div>
-          <Dropdown func={onHandleChange} option="three" item={false} />
-        </div>
-      </div>
-
-      <button className={`ui  ${!checkFields() && "disabled"} basic button`}>
-        Search
-      </button> */}
     </div>
   );
 };
