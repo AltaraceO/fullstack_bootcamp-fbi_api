@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-
 import { UserContext } from "./UserContext";
+import { NewUser } from "./NewUser";
 
 export const SignUp = () => {
   const [user] = useContext(UserContext)["user"];
@@ -17,6 +17,7 @@ export const SignUp = () => {
     });
     if (foundUser) {
       setCurrent(foundUser);
+      setNameSearch("");
     } else {
       setNameSearch("No user by that name");
     }
@@ -24,18 +25,27 @@ export const SignUp = () => {
 
   return (
     <div>
-      <div className="ui input">
-        <input type="text" value={nameSearch} onChange={onChangeHandle} />
+      <div>
+        <div className="ui input">
+          <input
+            type="text"
+            value={nameSearch}
+            onChange={onChangeHandle}
+            placeholder="Existing user?"
+          />
+        </div>
+
+        <button
+          className={`ui  ${
+            nameSearch || current ? "" : "disabled"
+          } basic button`}
+          onClick={checkUser}
+        >
+          <i className="icon user"></i>
+          {current ? `Hi ${current.user}` : "Login"}
+        </button>
       </div>
-      <h2>{nameSearch}</h2>
-      <div>sign up or login</div>
-      <button
-        className={`ui  ${!nameSearch && "disabled"} basic button`}
-        onClick={checkUser}
-      >
-        <i className="icon user"></i>
-        {current ? "Logout" : "Login"}
-      </button>
+      <NewUser />
     </div>
   );
 };

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FbiCall } from "./FbiCall";
 import { Dropdown } from "./Dropdown";
+import { UserContext } from "./UserContext";
+import { Link } from "react-router-dom";
 
 export const UserSearch = () => {
+  const [current] = useContext(UserContext)["currUser"];
   const [stateOne, setStateOne] = useState("");
   const [stateTwo, setStateTwo] = useState("");
   const [crime, setCrime] = useState("");
@@ -64,12 +67,28 @@ export const UserSearch = () => {
             <input type="text" onChange={onInputChange} value={year} />
           </div>
         </div>
-        <div
+
+        {current ? (
+          <div
+            className={`ui  ${!checkFields() && "disabled"} basic button`}
+            onClick={onSearchClick}
+          >
+            Submit
+          </div>
+        ) : (
+          <Link className="ui basic button" to="/signup/">
+            {" "}
+            To Sign up
+          </Link>
+        )}
+
+        {/* <div
           className={`ui  ${!checkFields() && "disabled"} basic button`}
           onClick={onSearchClick}
         >
           Submit
-        </div>
+        </div> */}
+
         {search && (
           <div className="ui horizontal segments">
             <div className="ui segment">

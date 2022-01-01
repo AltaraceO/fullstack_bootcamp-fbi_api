@@ -11,25 +11,26 @@ function App() {
     <div>
       <div className="entire-site">
         <BrowserRouter>
-          <div>
-            <div className="nav-bar">
-              <NavBar />
-            </div>
-            <div className="ui divider"></div>
-            <div className="under-nav">
-              <Route exact path="/">
-                <Main />
-              </Route>
-              <Route exact path="/search/">
-                <UserSearch />
-              </Route>
-              <UserProvider>
+          <UserProvider>
+            <div>
+              <div className="nav-bar">
+                <NavBar />
+              </div>
+              <div className="ui divider"></div>
+              <div className="under-nav">
+                <Route exact path="/">
+                  <Main />
+                </Route>
+                <Route exact path="/search/">
+                  <UserSearch />
+                </Route>
+
                 <Route exact path="/signup/">
                   <SignUp />
                 </Route>
-              </UserProvider>
+              </div>
             </div>
-          </div>
+          </UserProvider>
         </BrowserRouter>
       </div>
     </div>
