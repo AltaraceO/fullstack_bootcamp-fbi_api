@@ -1,30 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { allStates } from "../data";
 
 export const RenderStatistics = ({ data, crime, year }) => {
-  const renderItems = () => {
-    console.log(data);
-    const newArr = [];
-    for (let item in data[0]) {
-      if (item === crime) {
-        newArr.push(
-          <div className="ui statistics" key={data[0][item]}>
-            <div className="statistic">
-              <div className="value">{data[0].state_abbr}</div>
-            </div>
-            <div className="statistic">
-              <div className="value">{data[0][item]}</div>
-              <div className="label">
-                {item}s in {year}
-              </div>
-            </div>
-          </div>
-        );
-      }
-    }
+  const [stateName, setStateName] = useState("");
+  const [crimeString, setCrimeString] = useState("");
+  const [crimeNumber, setCrimeNumber] = useState("");
+  const [crimeNumberStr, setCrimeNumberStr] = useState("");
+  const [population, setPopulation] = useState("");
+  const [percentage, setPercentage] = useState("");
 
-    return newArr.map((item) => {
-      return item;
+  useEffect(() => {
+    const populateStates = () => {
+      for (let item in data) {
+        if (item === crime) {
+          getCrimeStr(item);
+          writeCrimeNumberStr(data[item]);
+          setCrimeNumber(data[item]);
+        } else if (item === "population") {
+          setPopulation(data[item]);
+          // calcPercentage();
+        } else if (item === "state_abbr") {
+          getStateName(data[item]);
+        }
+      }
+    };
+    if (data) {
+      populateStates();
+    }
+    // if (population && crimeNumber) {
+    //   calcPercentage();
+    // }
+  }, [crime, data]);
+
+  useEffect(() => {
+    if (population && crimeNumber) {
+      calcPercentage();
+    }
+  }, [population, crimeNumber]);
+
+  const getCrimeStr = (item) => {
+    const newItem = item.split("_").join(" ");
+    setCrimeString(newItem);
+  };
+
+  const writeCrimeNumberStr = (num) => {
+    const newNum = num.toLocaleString();
+    setCrimeNumberStr(newNum);
+  };
+
+  const getStateName = (state) => {
+    allStates.forEach((el) => {
+      if (el.category === state) {
+        setStateName(el.name);
+      }
     });
   };
-  return <div>{renderItems()}</div>;
+
+  const calcPercentage = () => {
+    if (crimeNumber && population) {
+      const perc = (crimeNumber / population) * 100000;
+      setPercentage(perc.toFixed(2));
+    } else {
+      setPercentage("not yet");
+    }
+  };
+
+  return (
+    <div>
+      <div className="ui statistics">
+        <div className="statistic">
+          <div className="label">{stateName}</div>
+        </div>
+
+        <div className="statistic">
+          <div className="value">{percentage} </div>
+          <span> per 100,000 population</span>
+
+          <div className="label">
+            {crimeNumberStr} {crimeString}s in {year}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
