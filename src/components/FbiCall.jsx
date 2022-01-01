@@ -11,7 +11,6 @@ export const FbiCall = ({ state, crime, year }) => {
       const gotData = await axios.get(
         `https://api.usa.gov/crime/fbi/sapi/api/estimates/states/${state}/${year}/${year}?API_KEY=LVDJRnZLVg8RcBA7YAtbkgqrPr1RckBTcZQdOOa2`
       );
-      // console.log(gotData.data.results[0]);
       setData(gotData.data.results[0]);
       setSpinner(false);
     };

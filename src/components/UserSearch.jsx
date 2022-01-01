@@ -41,7 +41,6 @@ export const UserSearch = () => {
     setSearch(!search);
   };
 
-  // console.log(typeof checkFields());
   return (
     <div>
       <div className="ui large form">

@@ -18,7 +18,6 @@ export const RenderStatistics = ({ data, crime, year }) => {
           setCrimeNumber(data[item]);
         } else if (item === "population") {
           setPopulation(data[item]);
-          // calcPercentage();
         } else if (item === "state_abbr") {
           getStateName(data[item]);
         }
@@ -27,9 +26,6 @@ export const RenderStatistics = ({ data, crime, year }) => {
     if (data) {
       populateStates();
     }
-    // if (population && crimeNumber) {
-    //   calcPercentage();
-    // }
   }, [crime, data]);
 
   useEffect(() => {
@@ -67,18 +63,18 @@ export const RenderStatistics = ({ data, crime, year }) => {
 
   return (
     <div>
-      <div className="ui statistics">
-        <div className="statistic">
+      <div>
+        <div className="ui statistic">
           <div className="label">{stateName}</div>
         </div>
 
-        <div className="statistic">
+        <div className="ui statistic">
+          <div>
+            {crimeNumberStr} {crimeString}s in {year}.
+          </div>
+
           <div className="value">{percentage} </div>
           <span> per 100,000 population</span>
-
-          <div className="label">
-            {crimeNumberStr} {crimeString}s in {year}
-          </div>
         </div>
       </div>
     </div>

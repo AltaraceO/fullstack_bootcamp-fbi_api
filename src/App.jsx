@@ -4,6 +4,7 @@ import { NavBar } from "./components/NavBar";
 import { UserSearch } from "./components/UserSearch";
 import { Main } from "./components/Main";
 import { SignUp } from "./components/SignUp";
+import { UserProvider } from "./components/UserContext";
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
               <Route exact path="/search/">
                 <UserSearch />
               </Route>
-              <Route exact path="/signup/">
-                <SignUp />
-              </Route>
+              <UserProvider>
+                <Route exact path="/signup/">
+                  <SignUp />
+                </Route>
+              </UserProvider>
             </div>
           </div>
         </BrowserRouter>
