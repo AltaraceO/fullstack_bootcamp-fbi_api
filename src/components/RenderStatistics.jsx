@@ -29,6 +29,14 @@ export const RenderStatistics = ({ data, crime, year }) => {
   }, [crime, data]);
 
   useEffect(() => {
+    const calcPercentage = () => {
+      if (crimeNumber && population) {
+        const perc = (crimeNumber / population) * 100000;
+        setPercentage(perc.toFixed(2));
+      } else {
+        setPercentage("not yet");
+      }
+    };
     if (population && crimeNumber) {
       calcPercentage();
     }
@@ -50,15 +58,6 @@ export const RenderStatistics = ({ data, crime, year }) => {
         setStateName(el.name);
       }
     });
-  };
-
-  const calcPercentage = () => {
-    if (crimeNumber && population) {
-      const perc = (crimeNumber / population) * 100000;
-      setPercentage(perc.toFixed(2));
-    } else {
-      setPercentage("not yet");
-    }
   };
 
   return (
