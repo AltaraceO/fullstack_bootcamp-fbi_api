@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { UserContext } from "./UserContext";
 import axios from "axios";
 
 export const AddSearch = ({ state, year, crime }) => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];
-  const [tempObj, setTempObj] = useState("");
 
   useEffect(() => {
     const updateUserSearch = async () => {
@@ -22,23 +21,13 @@ export const AddSearch = ({ state, year, crime }) => {
         `https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users/${current.id}`,
         updatedUser
       );
-      setTempObj(updatedUser);
-
-      console.log(updatedUser);
+      setCurrent(updatedUser);
     };
 
     if (state && year && crime && current) {
       updateUserSearch();
     }
-  }, [crime, state, year, setTempObj, current]);
-
-  // useEffect(() => {
-  //   if (tempObj) {
-  //     console.log(tempObj);
-  //     setCurrent(tempObj);
-  //     setTempObj("");
-  //   }
-  // }, [tempObj]);
+  }, [state, year, crime, setCurrent]);
 
   return (
     <div>
