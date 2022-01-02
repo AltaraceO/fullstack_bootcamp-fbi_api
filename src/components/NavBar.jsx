@@ -4,11 +4,10 @@ import { NavUserLog } from "./NavUserLog";
 
 export const NavBar = () => {
   return (
-    <div className="ui secondary  menu">
+    <div className="ui large secondary inverted menu nav-bar">
       <Link className="item" to="/">
         Home
       </Link>
-
       <Link className="item" to="/search/">
         Search
       </Link>
@@ -16,7 +15,6 @@ export const NavBar = () => {
         Sign up
       </Link>
       <div className="right menu">
-        {/* <div className="ui item active ">Logout</div> */}
         <NavUserLog />
       </div>
     </div>

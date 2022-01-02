@@ -5,9 +5,17 @@
   display: flex;
 }
 
+.main-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
 .nav-bar {
-  padding-top: 10px;
+  padding: 10px;
   max-width: 1200px;
+  background: #36619b;
+  font-size: 18px;
 }
 
 .under-nav {
@@ -24,4 +32,10 @@
   width: 100px;
   border-radius: 5px;
   background: white;
+}
+
+.existing-user {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
 }

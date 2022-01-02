@@ -33,22 +33,25 @@ export const NewUser = () => {
         <i className="sign-in icon"></i>
         Sign up
       </h4>
+
       <div className="ui form">
-        <div className="inline field">
-          <label>Name</label>
+        <div className="existing-user">
+          <p>To sign up, please enter your name</p>
+        </div>
+        <div className="inline field existing-user">
           <input
             type="text"
             placeholder="Must only contain letters"
             value={newName}
             onChange={newNameHandle}
           />
-        </div>
 
-        <div
-          className={`ui submit  ${current && "disabled"} basic button`}
-          onClick={onClickHandle}
-        >
-          Sign Up
+          <div
+            className={`ui submit  ${current && "disabled"} basic button`}
+            onClick={onClickHandle}
+          >
+            Sign Up
+          </div>
         </div>
       </div>
     </div>

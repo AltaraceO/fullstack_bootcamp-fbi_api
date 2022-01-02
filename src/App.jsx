@@ -16,7 +16,6 @@ function App() {
               <div className="nav-bar">
                 <NavBar />
               </div>
-              <div className="ui divider"></div>
               <div className="under-nav">
                 <Route exact path="/">
                   <Main />

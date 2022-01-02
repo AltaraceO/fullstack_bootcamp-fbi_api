@@ -24,8 +24,8 @@ export const SignUp = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="signup-main">
+      <div className="existing-user">
         <div className="ui input focus">
           <input
             type="text"
@@ -44,6 +44,7 @@ export const SignUp = () => {
           <i className="icon user"></i>
           {current ? `Hi ${current.user}` : "Log in"}
         </button>
+        {current ? <div>hi</div> : <div>bye</div>}
       </div>
       <NewUser />
     </div>

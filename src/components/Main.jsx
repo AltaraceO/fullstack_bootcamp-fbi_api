@@ -13,7 +13,7 @@ export const Main = () => {
           doloribus consequatur tenetur sed corporis voluptas?
         </p>
       </div>
-      <div>
+      <div className="main-links">
         <Link className="ui basic button" to="/search/">
           To Search
         </Link>

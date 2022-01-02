@@ -16,7 +16,7 @@ export const NavUserLog = () => {
           Log out
         </div>
       ) : (
-        <Link className="ui basic button" to="/signup/">
+        <Link className="ui basic button inverted" to="/signup/">
           Log in
         </Link>
       )}
