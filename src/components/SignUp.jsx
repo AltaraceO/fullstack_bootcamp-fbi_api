@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 import { NewUser } from "./NewUser";
+import axios from "axios";
 
 export const SignUp = () => {
-  const [user] = useContext(UserContext)["user"];
+  // const [user] = useContext(UserContext)["user"];
   const [current, setCurrent] = useContext(UserContext)["currUser"];
   const [nameSearch, setNameSearch] = useState("");
 
@@ -12,9 +13,12 @@ export const SignUp = () => {
     setNameSearch(e.target.value);
   };
 
-  const checkUser = () => {
-    const foundUser = user.find((e) => {
-      return e.user === nameSearch;
+  const checkUser = async () => {
+    const { data } = await axios.get(
+      "https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users"
+    );
+    const foundUser = data.find((e) => {
+      return e.user.toLowerCase() === nameSearch.toLowerCase();
     });
     if (foundUser) {
       setCurrent(foundUser);

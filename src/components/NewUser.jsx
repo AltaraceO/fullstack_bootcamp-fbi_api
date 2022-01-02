@@ -3,8 +3,10 @@ import axios from "axios";
 import { UserContext } from "./UserContext";
 
 export const NewUser = () => {
+  const [user] = useContext(UserContext)["user"];
   const [current] = useContext(UserContext)["currUser"];
   const [newName, setNewName] = useState("");
+  const [alert, setAlert] = useState("");
 
   const newNameHandle = (e) => {
     setNewName(e.target.value);
@@ -19,10 +21,20 @@ export const NewUser = () => {
       "https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users",
       newUser
     );
+    setNewName("");
   };
 
   const onClickHandle = () => {
-    if (newName) {
+    setAlert("");
+    const lower = newName.toLowerCase();
+    const userCheck = user.find((el) => {
+      return el.user.toLowerCase() === lower;
+    });
+    if (userCheck) {
+      setAlert("This user-name already exists");
+    } else if (/[^a-zA-Z]/.test(lower)) {
+      setAlert("Name must only inclued letters");
+    } else {
       updateUsers();
     }
   };
@@ -53,6 +65,7 @@ export const NewUser = () => {
             Sign Up
           </div>
         </div>
+        <div style={{ color: "pink" }}>{alert}</div>
       </div>
     </div>
   );
