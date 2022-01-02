@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "./UserContext";
+import { Link } from "react-router-dom";
 import { NewUser } from "./NewUser";
 
 export const SignUp = () => {
@@ -44,7 +45,11 @@ export const SignUp = () => {
           <i className="icon user"></i>
           {current ? `Hi ${current.user}` : "Log in"}
         </button>
-        {current ? <div>hi</div> : <div>bye</div>}
+        {current && (
+          <Link className="ui basic button" to="/search/">
+            Search
+          </Link>
+        )}
       </div>
       <NewUser />
     </div>

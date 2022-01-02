@@ -36,7 +36,7 @@ export const NewUser = () => {
 
       <div className="ui form">
         <div className="existing-user">
-          <p>To sign up, please enter your name</p>
+          <p>To sign up, simply enter your name</p>
         </div>
         <div className="inline field existing-user">
           <input

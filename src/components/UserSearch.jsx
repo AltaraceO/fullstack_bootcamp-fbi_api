@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { FbiCall } from "./FbiCall";
 import { Dropdown } from "./Dropdown";
+import { PreviousSearches } from "./PreviousSearches";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 
@@ -91,6 +92,8 @@ export const UserSearch = () => {
             </div>
           </div>
         )}
+        <div className="ui divider"></div>
+        {current && <PreviousSearches />}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export const UserProvider = (props) => {
       getInfo();
     }
   }, [user]);
-  // console.log(current);
+
   return (
     <UserContext.Provider
       value={{ user: [user, setUser], currUser: [current, setCurrent] }}
