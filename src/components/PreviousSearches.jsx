@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import { UserContext } from "./UserContext";
 // import axios from "axios";
 
@@ -9,7 +10,7 @@ export const PreviousSearches = () => {
     const random = Math.floor(Math.random() * 1000000000);
     return random;
   };
-
+  // useEffect(() => {
   const displayPrevSearch = () => {
     return current.search.map((search) => {
       return (
@@ -27,7 +28,7 @@ export const PreviousSearches = () => {
       );
     });
   };
-
+  // }, []);
   return (
     <div>
       <div>
