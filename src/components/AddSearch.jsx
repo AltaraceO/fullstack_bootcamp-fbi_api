@@ -1,12 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
 import axios from "axios";
 
 export const AddSearch = ({ state, year, crime }) => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];
+  const [tempUserObj, setTempUserObj] = useState("");
+  const [tempId, setTempId] = useState("");
 
   useEffect(() => {
-    const updateUserSearch = async () => {
+    const updateLocalStates = () => {
       const newSearch = {
         state: state,
         crime: crime,
@@ -17,17 +19,30 @@ export const AddSearch = ({ state, year, crime }) => {
         id: current.id,
         search: [...current.search, newSearch],
       };
-      await axios.put(
-        `https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users/${current.id}`,
-        updatedUser
-      );
-      setCurrent(updatedUser);
+
+      setTempUserObj(updatedUser);
+      setTempId(current.id);
     };
 
-    if (state && year && crime && current) {
+    if (state && year && crime) {
+      updateLocalStates();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state, year, crime]);
+
+  useEffect(() => {
+    const updateUserSearch = async () => {
+      await axios.put(
+        `https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users/${tempId}`,
+        tempUserObj
+      );
+      setCurrent(tempUserObj);
+    };
+
+    if (tempId && tempUserObj) {
       updateUserSearch();
     }
-  }, [state, year, crime, setCurrent]);
+  }, [setCurrent, tempUserObj, tempId]);
 
   return (
     <div>
