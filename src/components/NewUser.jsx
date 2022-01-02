@@ -3,7 +3,7 @@ import axios from "axios";
 import { UserContext } from "./UserContext";
 
 export const NewUser = () => {
-  const [current, setCurrent] = useContext(UserContext)["currUser"];
+  const [current] = useContext(UserContext)["currUser"];
   const [newName, setNewName] = useState("");
 
   const newNameHandle = (e) => {
@@ -29,19 +29,25 @@ export const NewUser = () => {
 
   return (
     <div>
-      <div className="ui tiny form">
-        <div className="two fields">
-          <div className="field">
-            <label>Name</label>
-            <input
-              placeholder="Must only contain letters"
-              type="text"
-              value={newName}
-              onChange={newNameHandle}
-            />
-          </div>
+      <h4 className="ui horizontal divider header">
+        <i className="sign-in icon"></i>
+        Sign up
+      </h4>
+      <div className="ui form">
+        <div className="inline field">
+          <label>Name</label>
+          <input
+            type="text"
+            placeholder="Must only contain letters"
+            value={newName}
+            onChange={newNameHandle}
+          />
         </div>
-        <div className="ui submit basic button" onClick={onClickHandle}>
+
+        <div
+          className={`ui submit  ${current && "disabled"} basic button`}
+          onClick={onClickHandle}
+        >
           Sign Up
         </div>
       </div>

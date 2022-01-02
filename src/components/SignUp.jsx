@@ -26,7 +26,7 @@ export const SignUp = () => {
   return (
     <div>
       <div>
-        <div className="ui input">
+        <div className="ui input focus">
           <input
             type="text"
             value={nameSearch}
@@ -37,12 +37,12 @@ export const SignUp = () => {
 
         <button
           className={`ui  ${
-            nameSearch || current ? "" : "disabled"
+            nameSearch || !current ? "" : "disabled"
           } basic button`}
           onClick={checkUser}
         >
           <i className="icon user"></i>
-          {current ? `Hi ${current.user}` : "Login"}
+          {current ? `Hi ${current.user}` : "Log in"}
         </button>
       </div>
       <NewUser />

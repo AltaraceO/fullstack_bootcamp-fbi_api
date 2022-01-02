@@ -15,11 +15,9 @@ export const Main = () => {
       </div>
       <div>
         <Link className="ui basic button" to="/search/">
-          {" "}
           To Search
         </Link>
         <Link className="ui basic button" to="/signup/">
-          {" "}
           To Sign up
         </Link>
       </div>

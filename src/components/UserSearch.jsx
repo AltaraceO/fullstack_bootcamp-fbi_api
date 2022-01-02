@@ -77,17 +77,9 @@ export const UserSearch = () => {
           </div>
         ) : (
           <Link className="ui basic button" to="/signup/">
-            {" "}
-            To Sign up
+            Sign up or Log in
           </Link>
         )}
-
-        {/* <div
-          className={`ui  ${!checkFields() && "disabled"} basic button`}
-          onClick={onSearchClick}
-        >
-          Submit
-        </div> */}
 
         {search && (
           <div className="ui horizontal segments">

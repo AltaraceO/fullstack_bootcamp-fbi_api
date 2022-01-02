@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-
 import React from "react";
+import { NavUserLog } from "./NavUserLog";
 
 export const NavBar = () => {
   return (
@@ -16,7 +16,8 @@ export const NavBar = () => {
         Sign up
       </Link>
       <div className="right menu">
-        <div className="ui item active ">Logout</div>
+        {/* <div className="ui item active ">Logout</div> */}
+        <NavUserLog />
       </div>
     </div>
   );
