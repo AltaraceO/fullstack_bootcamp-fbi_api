@@ -5,18 +5,20 @@ import { UserContext } from "./UserContext";
 export const PreviousSearches = () => {
   const [current] = useContext(UserContext)["currUser"];
 
+  const createRand = () => {
+    const random = Math.floor(Math.random() * 1000000000);
+    return random;
+  };
+
   const displayPrevSearch = () => {
     return current.search.map((search) => {
       return (
-        <div className="ui horizontal segments" key={search.year}>
+        <div className="ui horizontal segments" key={createRand()}>
           <div className="ui  segment">
             <p>Crime category: {search.crime}</p>
           </div>
           <div className="ui segment">
-            <p>First state: {search.firstState}</p>
-          </div>
-          <div className="ui segment">
-            <p>Second state: {search.secondState}</p>
+            <p>State: {search.state}</p>
           </div>
           <div className="ui segment">
             <p>Year: {search.year}</p>

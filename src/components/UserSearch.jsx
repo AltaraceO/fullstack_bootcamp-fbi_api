@@ -65,6 +65,7 @@ export const UserSearch = () => {
           </div>
           <div className="field">
             <label>Year</label>
+            {/* create a seperate componenet */}
             <input type="text" onChange={onInputChange} value={year} />
           </div>
         </div>
@@ -74,7 +75,7 @@ export const UserSearch = () => {
             className={`ui  ${!checkFields() && "disabled"} basic button`}
             onClick={onSearchClick}
           >
-            Submit
+            View Results
           </div>
         ) : (
           <Link className="ui basic button" to="/signup/">
@@ -82,7 +83,7 @@ export const UserSearch = () => {
           </Link>
         )}
 
-        {search && (
+        {search && current ? (
           <div className="ui horizontal segments">
             <div className="ui segment">
               <FbiCall state={stateOne} crime={crime} year={year} />
@@ -91,6 +92,8 @@ export const UserSearch = () => {
               <FbiCall state={stateTwo} crime={crime} year={year} />
             </div>
           </div>
+        ) : (
+          ""
         )}
         <div className="ui divider"></div>
         {current && <PreviousSearches />}
