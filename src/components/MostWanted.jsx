@@ -24,7 +24,7 @@ export const MostWanted = () => {
       controller.abort();
     };
   }, [wantedData]);
-  console.log(wantedData);
+
   return (
     <div>
       {wantedData && current ? (
