@@ -5,6 +5,7 @@ import { UserSearch } from "./components/UserSearch";
 import { Main } from "./components/Main";
 import { SignUp } from "./components/SignUp";
 import { UserProvider } from "./components/UserContext";
+import { MostWanted } from "./components/MostWanted";
 
 function App() {
   return (
@@ -20,10 +21,12 @@ function App() {
                 <Route exact path="/">
                   <Main />
                 </Route>
-                <Route exact path="/search/">
+                <Route exact path="/compare/">
                   <UserSearch />
                 </Route>
-
+                <Route exact path="/wanted/">
+                  <MostWanted />
+                </Route>
                 <Route exact path="/signup/">
                   <SignUp />
                 </Route>

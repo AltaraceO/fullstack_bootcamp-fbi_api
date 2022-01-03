@@ -8,9 +8,7 @@ export const DeleteHistory = ({ id }) => {
   const [tempId, setTempId] = useState("");
 
   const newSearchesArr = () => {
-    console.log(current.search);
     const newArr = current.search.filter((el) => el.id !== id);
-    console.log(newArr);
     const updatedUser = {
       user: current.user,
       id: current.id,

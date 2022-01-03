@@ -61,3 +61,10 @@
   padding: 6px 10px;
   color: pink;
 }
+
+.red-blue {
+  border: solid blue 1px;
+}
+.red-box {
+  border: solid red 1px;
+}

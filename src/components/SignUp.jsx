@@ -27,6 +27,7 @@ export const SignUp = () => {
       setNameSearch("");
     } else {
       setAlert(true);
+      setNameSearch("");
     }
   };
 
