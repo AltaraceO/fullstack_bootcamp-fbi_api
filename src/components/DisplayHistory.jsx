@@ -21,7 +21,7 @@ const getStateName = (state) => {
 export const DisplayHistory = ({ search, id }) => {
   const [crime, setCrime] = useState(getCrimeStr(search.crime));
   const [stateOne, setStateOne] = useState(getStateName(search.stateOne));
-  const [stateTwo, setStateTwo] = useState(getStateName(search.stateOne));
+  const [stateTwo, setStateTwo] = useState(getStateName(search.stateTwo));
   const [year, setYear] = useState(search.year);
   const [visibility, setVisibility] = useState(false);
 

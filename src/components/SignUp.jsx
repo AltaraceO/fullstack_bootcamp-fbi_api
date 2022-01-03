@@ -54,7 +54,7 @@ export const SignUp = () => {
         </button>
         {alert && <div className="alert">No user by this name</div>}
         {current && (
-          <Link className="ui basic button" to="/search/">
+          <Link className="ui basic button" to="/compare/">
             Search
           </Link>
         )}
