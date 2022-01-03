@@ -39,3 +39,17 @@
   display: flex;
   gap: 1rem;
 }
+
+.main-button {
+  border: lightgray solid 1px;
+  border-radius: 2px;
+  padding: 6px 10px;
+  background: transparent;
+  color: gray;
+}
+
+.main-button:hover {
+  border: gray solid 1px;
+  color: darkslategray;
+  cursor: pointer;
+}

@@ -7,9 +7,15 @@ export const AddSearch = ({ state, year, crime }) => {
   const [tempUserObj, setTempUserObj] = useState("");
   const [tempId, setTempId] = useState("");
 
+  const createRand = () => {
+    const random = Math.floor(Math.random() * 1000000000);
+    return random;
+  };
+
   useEffect(() => {
     const updateLocalStates = () => {
       const newSearch = {
+        id: createRand(),
         state: state,
         crime: crime,
         year: year,
