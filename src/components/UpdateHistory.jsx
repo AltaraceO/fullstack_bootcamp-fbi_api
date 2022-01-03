@@ -3,11 +3,14 @@ import { Dropdown } from "./Dropdown";
 import { YearInput } from "./YearInput";
 
 export const UpdateHistory = ({
+  id,
   changeVis,
   setMainYear,
   setMainCrime,
   setMainStateOne,
   setMainStateTwo,
+  stateFunc,
+  crimeFunc,
 }) => {
   const [crime, setCrime] = useState("");
   const [stateOne, setStateOne] = useState("");
@@ -36,9 +39,9 @@ export const UpdateHistory = ({
   const updateClick = () => {
     if (crime && stateOne && stateTwo && year) {
       setMainYear(year);
-      setMainCrime(crime);
-      setMainStateOne(stateOne);
-      setMainStateTwo(stateTwo);
+      setMainCrime(crimeFunc(crime));
+      setMainStateOne(stateFunc(stateOne));
+      setMainStateTwo(stateFunc(stateTwo));
       changeVis();
     } else {
       setAlert(true);
@@ -79,6 +82,10 @@ export const UpdateHistory = ({
       </button>
       <button className="main-button" onClick={updateClick}>
         Change
+      </button>
+      <button className="main-button" onClick={updateClick}>
+        Delete
+        {id}
       </button>
     </div>
   );

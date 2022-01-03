@@ -1,14 +1,32 @@
+import { allStates } from "../data";
 import React, { useState } from "react";
 import { UpdateHistory } from "./UpdateHistory";
-// import { UserContext } from "./UserContext";
+
+const getCrimeStr = (item) => {
+  const newItem = item.split("_").join(" ");
+  return newItem;
+};
+
+const getStateName = (state) => {
+  let fullName = "";
+
+  allStates.forEach((el) => {
+    if (el.category === state) {
+      console.log(el.name);
+      fullName = el.name;
+    }
+  });
+  return fullName;
+};
 
 export const DisplayHistory = ({ search, id }) => {
-  const [crime, setCrime] = useState(search.crime);
-  const [stateOne, setStateOne] = useState(search.stateOne);
-  const [stateTwo, setStateTwo] = useState(search.stateTwo);
+  const [crime, setCrime] = useState(getCrimeStr(search.crime));
+  const [stateOne, setStateOne] = useState(getStateName(search.stateOne));
+  const [stateTwo, setStateTwo] = useState(getStateName(search.stateOne));
   const [year, setYear] = useState(search.year);
   const [visibility, setVisibility] = useState(false);
 
+  // console.log(allStates);
   const changeVis = () => {
     setVisibility((pervVisibility) => !visibility);
   };
@@ -44,6 +62,8 @@ export const DisplayHistory = ({ search, id }) => {
         setMainYear={setYear}
         setMainStateOne={setStateOne}
         setMainStateTwo={setStateTwo}
+        stateFunc={getStateName}
+        crimeFunc={getCrimeStr}
       />
     );
   return (
