@@ -4,6 +4,7 @@ import { Dropdown } from "./Dropdown";
 import { PreviousSearches } from "./PreviousSearches";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
+import { YearInput } from "./YearInput";
 
 export const UserSearch = () => {
   const [current] = useContext(UserContext)["currUser"];
@@ -29,10 +30,6 @@ export const UserSearch = () => {
       default:
         console.log("no matches");
     }
-  };
-
-  const onInputChange = (e) => {
-    setYear(e.target.value);
   };
 
   const checkFields = () => {
@@ -64,9 +61,7 @@ export const UserSearch = () => {
             <Dropdown func={onHandleChange} option="three" item={false} />
           </div>
           <div className="field">
-            <label>Year</label>
-            {/* create a seperate componenet */}
-            <input type="text" onChange={onInputChange} value={year} />
+            <YearInput yearMain={setYear} />
           </div>
         </div>
 

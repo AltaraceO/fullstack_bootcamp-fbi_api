@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Dropdown } from "./Dropdown";
+import { YearInput } from "./YearInput";
 
 export const UpdateHistory = ({
   changeVis,
@@ -25,11 +26,6 @@ export const UpdateHistory = ({
       default:
         console.log("no matches");
     }
-  };
-
-  const onInputChange = (e) => {
-    setAlert(false);
-    setYear(e.target.value);
   };
 
   const updateClick = () => {
@@ -60,7 +56,7 @@ export const UpdateHistory = ({
         </div>
         <div className="ui segment">
           Year
-          <input type="text" onChange={onInputChange} value={year} />
+          <YearInput yearMain={setYear} />
         </div>
       </div>
       {alert && (

@@ -77,7 +77,9 @@ export const RenderStatistics = ({ data, crime, year }) => {
             <div className="value">{percentage} </div>
             <span> per 100,000 population</span>
           </div>
-          <AddSearch crime={crimeString} year={year} state={stateName} />
+          {stateName && (
+            <AddSearch crime={crimeString} year={year} state={stateName} />
+          )}
         </div>
       )}
     </div>

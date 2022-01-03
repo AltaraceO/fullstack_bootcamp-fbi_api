@@ -13,28 +13,29 @@ export const AddSearch = ({ state, year, crime }) => {
   };
 
   useEffect(() => {
-    const updateLocalStates = () => {
-      const newSearch = {
-        id: createRand(),
-        state: state,
-        crime: crime,
-        year: year,
-      };
-      const updatedUser = {
-        user: current.user,
-        id: current.id,
-        search: [...current.search, newSearch],
+    if (!tempUserObj) {
+      const updateLocalStates = () => {
+        const newSearch = {
+          id: createRand(),
+          state: state,
+          crime: crime,
+          year: year,
+        };
+        const updatedUser = {
+          user: current.user,
+          id: current.id,
+          search: [...current.search, newSearch],
+        };
+
+        setTempUserObj(updatedUser);
+        setTempId(current.id);
       };
 
-      setTempUserObj(updatedUser);
-      setTempId(current.id);
-    };
-
-    if (state && year && crime) {
-      updateLocalStates();
+      if (state && year && crime) {
+        updateLocalStates();
+      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state, year, crime]);
+  }, [state, year, crime, current, tempUserObj]);
 
   useEffect(() => {
     const updateUserSearch = async () => {
