@@ -39,17 +39,25 @@ export const AddSearch = ({ stateOne, stateTwo, year, crime }) => {
   }, [stateOne, stateTwo, year, crime, current, tempUserObj]);
 
   useEffect(() => {
+    const controller = new AbortController();
     const updateUserSearch = async () => {
-      await axios.put(
-        `https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users/${tempId}`,
-        tempUserObj
-      );
-      setCurrent(tempUserObj);
+      try {
+        await axios.put(
+          `https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users/${tempId}`,
+          tempUserObj
+        );
+        setCurrent(tempUserObj);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     if (tempId && tempUserObj) {
       updateUserSearch();
     }
+    return () => {
+      controller.abort();
+    };
   }, [setCurrent, tempUserObj, tempId]);
 
   return (

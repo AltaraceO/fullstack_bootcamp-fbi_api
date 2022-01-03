@@ -1,8 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { UserContext } from "./UserContext";
+import React, { useEffect, useState, useContext } from "react";
 import { DisplayWanted } from "./DisplayWanted";
+import { Link } from "react-router-dom";
 
 export const MostWanted = () => {
+  const [current] = useContext(UserContext)["currUser"];
   const [wantedData, setWantedData] = useState(null);
   useEffect(() => {
     const controller = new AbortController();
@@ -21,5 +24,16 @@ export const MostWanted = () => {
       controller.abort();
     };
   }, [wantedData]);
-  return <div>{wantedData && <DisplayWanted data={wantedData} />}</div>;
+  console.log(wantedData);
+  return (
+    <div>
+      {wantedData && current ? (
+        <DisplayWanted data={wantedData} />
+      ) : (
+        <Link className="ui basic button" to="/signup/">
+          Sign up or Log in
+        </Link>
+      )}
+    </div>
+  );
 };

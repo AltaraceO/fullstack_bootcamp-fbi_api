@@ -25,7 +25,6 @@ export const DisplayHistory = ({ search, id }) => {
   const [year, setYear] = useState(search.year);
   const [visibility, setVisibility] = useState(false);
 
-  // console.log(allStates);
   const changeVis = () => {
     setVisibility((pervVisibility) => !visibility);
   };

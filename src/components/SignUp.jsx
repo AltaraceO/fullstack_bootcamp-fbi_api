@@ -54,9 +54,14 @@ export const SignUp = () => {
         </button>
         {alert && <div className="alert">No user by this name</div>}
         {current && (
-          <Link className="ui basic button" to="/compare/">
-            Search
-          </Link>
+          <div>
+            <Link className="ui basic button" to="/compare/">
+              Compare
+            </Link>
+            <Link className="ui basic button" to="/wanted/">
+              Wanted
+            </Link>
+          </div>
         )}
       </div>
       <NewUser />

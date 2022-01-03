@@ -18,10 +18,14 @@ export const NewUser = () => {
       user: newName,
       search: [],
     };
-    await axios.post(
-      "https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users",
-      newUser
-    );
+    try {
+      await axios.post(
+        "https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users",
+        newUser
+      );
+    } catch (err) {
+      console.log(err);
+    }
     setNewName("");
   };
 

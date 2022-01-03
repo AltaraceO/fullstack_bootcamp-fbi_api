@@ -7,10 +7,7 @@ export const allStates = [
     name: "Alaska",
     category: "AK",
   },
-  {
-    name: "American Samoa",
-    category: "AS",
-  },
+
   {
     name: "Arizona",
     category: "AZ",
@@ -39,10 +36,7 @@ export const allStates = [
     name: "District Of Columbia",
     category: "DC",
   },
-  {
-    name: "Federated States Of Micronesia",
-    category: "FM",
-  },
+
   {
     name: "Florida",
     category: "FL",
@@ -51,10 +45,7 @@ export const allStates = [
     name: "Georgia",
     category: "GA",
   },
-  {
-    name: "Guam",
-    category: "GU",
-  },
+
   {
     name: "Hawaii",
     category: "HI",
@@ -91,10 +82,7 @@ export const allStates = [
     name: "Maine",
     category: "ME",
   },
-  {
-    name: "Marshall Islands",
-    category: "MH",
-  },
+
   {
     name: "Maryland",
     category: "MD",
@@ -155,10 +143,7 @@ export const allStates = [
     name: "North Dakota",
     category: "ND",
   },
-  {
-    name: "Northern Mariana Islands",
-    category: "MP",
-  },
+
   {
     name: "Ohio",
     category: "OH",
@@ -171,18 +156,12 @@ export const allStates = [
     name: "Oregon",
     category: "OR",
   },
-  {
-    name: "Palau",
-    category: "PW",
-  },
+
   {
     name: "Pennsylvania",
     category: "PA",
   },
-  {
-    name: "Puerto Rico",
-    category: "PR",
-  },
+
   {
     name: "Rhode Island",
     category: "RI",
