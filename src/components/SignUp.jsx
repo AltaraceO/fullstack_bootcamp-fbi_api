@@ -8,8 +8,10 @@ export const SignUp = () => {
   // const [user] = useContext(UserContext)["user"];
   const [current, setCurrent] = useContext(UserContext)["currUser"];
   const [nameSearch, setNameSearch] = useState("");
+  const [alert, setAlert] = useState(false);
 
   const onChangeHandle = (e) => {
+    setAlert(false);
     setNameSearch(e.target.value);
   };
 
@@ -24,7 +26,7 @@ export const SignUp = () => {
       setCurrent(foundUser);
       setNameSearch("");
     } else {
-      setNameSearch("No user by that name");
+      setAlert(true);
     }
   };
 
@@ -49,6 +51,7 @@ export const SignUp = () => {
           <i className="icon user"></i>
           {current ? `Hi ${current.user}` : "Log in"}
         </button>
+        {alert && <div className="alert">No user by this name</div>}
         {current && (
           <Link className="ui basic button" to="/search/">
             Search

@@ -10,8 +10,10 @@ export const UpdateHistory = ({
   const [crime, setCrime] = useState("");
   const [state, setState] = useState("");
   const [year, setYear] = useState("");
+  const [alert, setAlert] = useState(false);
 
   const onHandleChange = (e, option) => {
+    setAlert(false);
     console.log(e);
     switch (option) {
       case "one":
@@ -26,14 +28,19 @@ export const UpdateHistory = ({
   };
 
   const onInputChange = (e) => {
+    setAlert(false);
     setYear(e.target.value);
   };
 
   const updateClick = () => {
-    setMainYear(year);
-    setMainCrime(crime);
-    setMainState(state);
-    changeVis();
+    if (crime && state && year) {
+      setMainYear(year);
+      setMainCrime(crime);
+      setMainState(state);
+      changeVis();
+    } else {
+      setAlert(true);
+    }
   };
 
   const cancelClick = () => {
@@ -56,6 +63,11 @@ export const UpdateHistory = ({
           <input type="text" onChange={onInputChange} value={year} />
         </div>
       </div>
+      {alert && (
+        <div className="alert">
+          All fields must have a value before changing
+        </div>
+      )}
       <button className="main-button" onClick={cancelClick}>
         Cancel
       </button>

@@ -9,6 +9,7 @@ export const NewUser = () => {
   const [alert, setAlert] = useState("");
 
   const newNameHandle = (e) => {
+    setAlert("");
     setNewName(e.target.value);
   };
 
@@ -32,7 +33,7 @@ export const NewUser = () => {
     });
     if (userCheck) {
       setAlert("This user-name already exists");
-    } else if (/[^a-zA-Z]/.test(lower)) {
+    } else if (/[^a-zA-Z]/.test(lower) || !newName) {
       setAlert("Name must only inclued letters");
     } else {
       updateUsers();
@@ -65,7 +66,7 @@ export const NewUser = () => {
             Sign Up
           </div>
         </div>
-        <div style={{ color: "pink" }}>{alert}</div>
+        {alert && <div className="alert">{alert}</div>}
       </div>
     </div>
   );

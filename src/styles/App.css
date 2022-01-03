@@ -53,3 +53,10 @@
   color: darkslategray;
   cursor: pointer;
 }
+
+.alert {
+  border-radius: 2px;
+  border: 1px solid pink;
+  padding: 6px 10px;
+  color: pink;
+}
