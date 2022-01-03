@@ -12,7 +12,6 @@ const getStateName = (state) => {
 
   allStates.forEach((el) => {
     if (el.category === state) {
-      console.log(el.name);
       fullName = el.name;
     }
   });

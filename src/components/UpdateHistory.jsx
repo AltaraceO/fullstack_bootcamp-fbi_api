@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { YearInput } from "./YearInput";
+import { DeleteHistory } from "./DeleteHistory";
 
 export const UpdateHistory = ({
   id,
@@ -83,10 +84,8 @@ export const UpdateHistory = ({
       <button className="main-button" onClick={updateClick}>
         Change
       </button>
-      <button className="main-button" onClick={updateClick}>
-        Delete
-        {id}
-      </button>
+
+      <DeleteHistory className="main-button" id={id} />
     </div>
   );
 
