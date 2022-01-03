@@ -5,6 +5,7 @@ import { PreviousSearches } from "./PreviousSearches";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 import { YearInput } from "./YearInput";
+import { AddSearch } from "./AddSearch";
 
 export const UserSearch = () => {
   const [current] = useContext(UserContext)["currUser"];
@@ -86,6 +87,12 @@ export const UserSearch = () => {
             <div className="ui segment">
               <FbiCall state={stateTwo} crime={crime} year={year} />
             </div>
+            <AddSearch
+              crime={crime}
+              year={year}
+              stateOne={stateOne}
+              stateTwo={stateTwo}
+            />
           </div>
         ) : (
           ""

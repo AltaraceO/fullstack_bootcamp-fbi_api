@@ -6,10 +6,12 @@ export const UpdateHistory = ({
   changeVis,
   setMainYear,
   setMainCrime,
-  setMainState,
+  setMainStateOne,
+  setMainStateTwo,
 }) => {
   const [crime, setCrime] = useState("");
-  const [state, setState] = useState("");
+  const [stateOne, setStateOne] = useState("");
+  const [stateTwo, setStateTwo] = useState("");
   const [year, setYear] = useState("");
   const [alert, setAlert] = useState(false);
 
@@ -18,7 +20,10 @@ export const UpdateHistory = ({
     console.log(e);
     switch (option) {
       case "one":
-        setState(e);
+        setStateOne(e);
+        break;
+      case "two":
+        setStateTwo(e);
         break;
       case "three":
         setCrime(e);
@@ -29,10 +34,11 @@ export const UpdateHistory = ({
   };
 
   const updateClick = () => {
-    if (crime && state && year) {
+    if (crime && stateOne && stateTwo && year) {
       setMainYear(year);
       setMainCrime(crime);
-      setMainState(state);
+      setMainStateOne(stateOne);
+      setMainStateTwo(stateTwo);
       changeVis();
     } else {
       setAlert(true);
@@ -51,8 +57,12 @@ export const UpdateHistory = ({
           <Dropdown func={onHandleChange} option="three" item={false} />
         </div>
         <div className="ui segment">
-          State
+          First State
           <Dropdown func={onHandleChange} option="one" item={true} />
+        </div>
+        <div className="ui segment">
+          Second State
+          <Dropdown func={onHandleChange} option="two" item={true} />
         </div>
         <div className="ui segment">
           Year

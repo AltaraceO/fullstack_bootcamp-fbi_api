@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
 import axios from "axios";
 
-export const AddSearch = ({ state, year, crime }) => {
+export const AddSearch = ({ stateOne, stateTwo, year, crime }) => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];
   const [tempUserObj, setTempUserObj] = useState("");
   const [tempId, setTempId] = useState("");
@@ -17,7 +17,8 @@ export const AddSearch = ({ state, year, crime }) => {
       const updateLocalStates = () => {
         const newSearch = {
           id: createRand(),
-          state: state,
+          stateOne: stateOne,
+          stateTwo: stateTwo,
           crime: crime,
           year: year,
         };
@@ -31,11 +32,11 @@ export const AddSearch = ({ state, year, crime }) => {
         setTempId(current.id);
       };
 
-      if (state && year && crime) {
+      if (stateOne && stateTwo && year && crime) {
         updateLocalStates();
       }
     }
-  }, [state, year, crime, current, tempUserObj]);
+  }, [stateOne, stateTwo, year, crime, current, tempUserObj]);
 
   useEffect(() => {
     const updateUserSearch = async () => {
