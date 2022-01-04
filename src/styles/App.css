@@ -46,6 +46,7 @@
   padding: 6px 10px;
   background: transparent;
   color: gray;
+  margin: 5px;
 }
 
 .main-button:hover {

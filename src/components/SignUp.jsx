@@ -3,15 +3,21 @@ import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 import { NewUser } from "./NewUser";
 import axios from "axios";
+import { DeleteAccount } from "./DeleteAccount";
 
 export const SignUp = () => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];
   const [nameSearch, setNameSearch] = useState("");
   const [alert, setAlert] = useState(false);
+  const [deleteAcc, setDeleteAcc] = useState(false);
 
   const onChangeHandle = (e) => {
     setAlert(false);
     setNameSearch(e.target.value);
+  };
+
+  const onDeleteHandle = () => {
+    setDeleteAcc(!deleteAcc);
   };
 
   const checkUser = async () => {
@@ -33,7 +39,7 @@ export const SignUp = () => {
   return (
     <div className="signup-main">
       <div className="existing-user">
-        <div className="ui input focus">
+        <div className={`ui  ${!current ? "" : "disabled"} input focus`}>
           <input
             type="text"
             value={nameSearch}
@@ -54,16 +60,24 @@ export const SignUp = () => {
         {alert && <div className="alert">No user by this name</div>}
         {current && (
           <div>
-            <Link className="ui basic button" to="/compare/">
-              Compare
-            </Link>
-            <Link className="ui basic button" to="/wanted/">
-              Wanted
-            </Link>
+            <div>
+              <Link className="main-button" to="/compare/">
+                Compare
+              </Link>
+              <Link className="main-button" to="/wanted/">
+                Wanted
+              </Link>
+            </div>
+            <div>
+              <button className="main-button" onClick={onDeleteHandle}>
+                Delete account
+              </button>
+            </div>
           </div>
         )}
       </div>
-      <NewUser />
+      {deleteAcc && <DeleteAccount resetAlert={onDeleteHandle} />}
+      {!current && <NewUser />}
     </div>
   );
 };
