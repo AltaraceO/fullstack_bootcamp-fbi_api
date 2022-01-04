@@ -46,10 +46,7 @@ export const NewUser = () => {
 
   return (
     <div>
-      <h4 className="ui horizontal divider header">
-        <i className="sign-in icon"></i>
-        Sign up
-      </h4>
+      <div className="ui divider"></div>
 
       <div className="ui form">
         <div className="existing-user">

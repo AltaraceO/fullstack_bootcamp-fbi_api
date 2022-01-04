@@ -5,7 +5,6 @@ import { NewUser } from "./NewUser";
 import axios from "axios";
 
 export const SignUp = () => {
-  // const [user] = useContext(UserContext)["user"];
   const [current, setCurrent] = useContext(UserContext)["currUser"];
   const [nameSearch, setNameSearch] = useState("");
   const [alert, setAlert] = useState(false);

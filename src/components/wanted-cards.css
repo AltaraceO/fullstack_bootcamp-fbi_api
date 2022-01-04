@@ -1,0 +1,6 @@
+.main-card {
+  border: 2px slategray solid;
+  border-radius: 3px;
+  margin: 10px;
+  max-width: 300px;
+}

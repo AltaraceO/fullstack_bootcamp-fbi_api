@@ -8,25 +8,10 @@ export const WantedImage = ({ smallImg, largeImg }) => {
   };
   return (
     <div>
-      <img
-        className="small"
-        src={smallImg}
-        onClick={openClick}
-        alt="smallFace"
-      />
+      <img src={smallImg} onClick={openClick} alt="smallFace" />
       {open && (
-        <dialog
-          className="dialog"
-          style={{ position: "absolute" }}
-          open
-          onClick={openClick}
-        >
-          <img
-            className="image"
-            src={largeImg}
-            onClick={openClick}
-            alt="largeFace"
-          />
+        <dialog style={{ position: "absolute" }} open onClick={openClick}>
+          <img src={largeImg} onClick={openClick} alt="largeFace" />
         </dialog>
       )}
     </div>
