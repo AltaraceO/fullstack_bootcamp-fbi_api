@@ -4,3 +4,11 @@
   margin: 10px;
   max-width: 300px;
 }
+
+.page-numbers {
+  color: darkslategrey;
+}
+
+.page-numbers:hover {
+  cursor: pointer;
+}

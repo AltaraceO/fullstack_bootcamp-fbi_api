@@ -63,6 +63,14 @@
   color: pink;
 }
 
+.success {
+  margin: 5px;
+  border-radius: 2px;
+  border: 1px solid lightgreen;
+  padding: 6px 10px;
+  color: lightgreen;
+}
+
 .red-blue {
   border: solid blue 1px;
 }

@@ -7,10 +7,18 @@ export const NewUser = () => {
   const [current] = useContext(UserContext)["currUser"];
   const [newName, setNewName] = useState("");
   const [alert, setAlert] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const newNameHandle = (e) => {
     setAlert("");
     setNewName(e.target.value);
+  };
+
+  const successAlert = () => {
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 4000);
   };
 
   const updateUsers = async () => {
@@ -27,6 +35,7 @@ export const NewUser = () => {
       console.log(err);
     }
     setNewName("");
+    successAlert();
   };
 
   const onClickHandle = () => {
@@ -68,6 +77,9 @@ export const NewUser = () => {
           </div>
         </div>
         {alert && <div className="alert">{alert}</div>}
+        {success && (
+          <div className="success">Success! Log in with your user name</div>
+        )}
       </div>
     </div>
   );

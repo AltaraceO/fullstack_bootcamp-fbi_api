@@ -15,7 +15,10 @@ export const Main = () => {
       </div>
       <div className="main-links">
         <Link className="ui basic button" to="/search/">
-          To Search
+          Compare States
+        </Link>
+        <Link className="ui basic button" to="/wanted/">
+          Wanted List
         </Link>
         <Link className="ui basic button" to="/signup/">
           To Sign up

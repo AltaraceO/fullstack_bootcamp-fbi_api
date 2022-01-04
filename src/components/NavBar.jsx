@@ -12,7 +12,7 @@ export const NavBar = () => {
         Compare States
       </Link>
       <Link className="item" to="/wanted/">
-        Most Wanted
+        Wanted List
       </Link>
       <Link className="item" to="/signup/">
         Sign up

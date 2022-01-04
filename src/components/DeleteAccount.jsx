@@ -7,11 +7,9 @@ export const DeleteAccount = ({ resetAlert }) => {
 
   const deleteUser = async () => {
     try {
-      const { data } = await axios.delete(
+      await axios.delete(
         `https://61d0790ccd2ee50017cc9887.mockapi.io/fbi/users/${current.id}`
       );
-      console.log(data);
-      console.log(current.id);
       setCurrent("");
       resetAlert();
     } catch (err) {
