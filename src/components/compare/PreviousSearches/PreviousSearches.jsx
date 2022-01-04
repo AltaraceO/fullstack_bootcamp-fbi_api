@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { UserContext } from "./UserContext";
-import { DisplayHistory } from "./DisplayHistory";
+import { UserContext } from "../../UserContext";
+import { DisplayHistory } from "../DisplayHistory/DisplayHistory";
 
 export const PreviousSearches = () => {
   const [current] = useContext(UserContext)["currUser"];

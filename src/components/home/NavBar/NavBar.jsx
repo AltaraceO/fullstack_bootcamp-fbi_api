@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import { NavUserLog } from "./NavUserLog";
+import { NavUserLog } from "../NavUserLog/NavUserLog";
 
 export const NavBar = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../UserContext";
 import axios from "axios";
 
 export const AddSearch = ({ stateOne, stateTwo, year, crime }) => {

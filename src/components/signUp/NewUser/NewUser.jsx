@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../UserContext";
+import "../../signUp/signstyle.css";
 
 export const NewUser = () => {
   const [user] = useContext(UserContext)["user"];
@@ -57,30 +58,25 @@ export const NewUser = () => {
     <div>
       <div className="ui divider"></div>
 
-      <div className="ui form">
-        <div className="existing-user">
-          <p>To sign up, simply enter your name</p>
-        </div>
-        <div className="inline field existing-user">
-          <input
-            type="text"
-            placeholder="Must only contain letters"
-            value={newName}
-            onChange={newNameHandle}
-          />
-
-          <div
-            className={`ui submit  ${current && "disabled"} basic button`}
-            onClick={onClickHandle}
-          >
-            Sign Up
-          </div>
-        </div>
-        {alert && <div className="alert">{alert}</div>}
-        {success && (
-          <div className="success">Success! Log in with your user name</div>
-        )}
+      <div className="existing-user">
+        <p>To sign up, simply enter your name</p>
       </div>
+
+      <input
+        type="text"
+        placeholder="Must only contain letters"
+        value={newName}
+        onChange={newNameHandle}
+      />
+
+      <button onClick={onClickHandle} disabled={current ? true : false}>
+        Sign Up
+      </button>
+
+      {alert && <div className="alert">{alert}</div>}
+      {success && (
+        <div className="success">Success! Log in with your user name</div>
+      )}
     </div>
   );
 };

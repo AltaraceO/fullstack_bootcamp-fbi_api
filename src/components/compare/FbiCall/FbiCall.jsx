@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { RenderStatistics } from "./RenderStatistics";
+import { RenderStatistics } from "../RenderStatistics/RenderStatistics";
 
 export const FbiCall = ({ state, crime, year }) => {
   const [data, setData] = useState("");

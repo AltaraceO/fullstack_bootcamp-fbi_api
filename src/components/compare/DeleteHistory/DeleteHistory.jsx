@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState, useEffect } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../UserContext";
 
 export const DeleteHistory = ({ id }) => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];

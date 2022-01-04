@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
-import { NewUser } from "./NewUser";
+import { NewUser } from "../NewUser/NewUser";
 import axios from "axios";
-import { DeleteAccount } from "./DeleteAccount";
+import { DeleteAccount } from "../DeleteAccount/DeleteAccount";
+import "../../signUp/signstyle.css";
 
 export const SignUp = () => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];
@@ -39,14 +40,15 @@ export const SignUp = () => {
   return (
     <div className="signup-main">
       <div className="existing-user">
-        <div className={`ui  ${!current ? "" : "disabled"} input focus`}>
-          <input
-            type="text"
-            value={nameSearch}
-            onChange={onChangeHandle}
-            placeholder="Existing user?"
-          />
-        </div>
+        {/* <div className={`ui  ${!current ? "" : "disabled"} input focus`}> */}
+        <input
+          disabled={!current ? false : true}
+          type="text"
+          value={nameSearch}
+          onChange={onChangeHandle}
+          placeholder="Existing user?"
+        />
+        {/* </div> */}
 
         <button
           className={`ui  ${
@@ -59,7 +61,7 @@ export const SignUp = () => {
         </button>
         {alert && <div className="alert">No user by this name</div>}
         {current && (
-          <div>
+          <div className="three-buttons">
             <div>
               <Link className="main-button" to="/compare/">
                 Compare

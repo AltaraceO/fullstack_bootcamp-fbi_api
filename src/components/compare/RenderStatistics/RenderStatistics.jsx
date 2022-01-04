@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { allStates } from "../data";
+import { allStates } from "../../../data";
 
 export const RenderStatistics = ({ data, crime, year }) => {
   const [stateName, setStateName] = useState("");

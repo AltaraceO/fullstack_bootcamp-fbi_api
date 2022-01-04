@@ -1,5 +1,5 @@
 import React from "react";
-import { allStates, crimeCat } from "../data";
+import { allStates, crimeCat } from "../../../data";
 
 export const Dropdown = ({ func, option, item }) => {
   const searchItem = item ? allStates : crimeCat;

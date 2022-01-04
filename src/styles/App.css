@@ -14,7 +14,7 @@
 .nav-bar {
   padding: 10px;
   max-width: 1200px;
-  background: #24335b;
+  background: #141c33;
   font-size: 18px;
 }
 
@@ -26,6 +26,7 @@
 .entire-site {
   align-items: center;
   text-align: center;
+  max-width: 1200px;
 }
 
 .myDropdown {
@@ -58,9 +59,9 @@
 .alert {
   margin: 5px;
   border-radius: 2px;
-  border: 1px solid pink;
+  border: 1px solid #eb677d;
   padding: 6px 10px;
-  color: pink;
+  color: #eb677d;
 }
 
 .success {

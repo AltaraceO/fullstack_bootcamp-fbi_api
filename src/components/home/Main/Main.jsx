@@ -14,7 +14,7 @@ export const Main = () => {
         </p>
       </div>
       <div className="main-links">
-        <Link className="ui basic button" to="/search/">
+        <Link className="ui basic button" to="/compare/">
           Compare States
         </Link>
         <Link className="ui basic button" to="/wanted/">

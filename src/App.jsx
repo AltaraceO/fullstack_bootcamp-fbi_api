@@ -1,12 +1,11 @@
 import "./styles/App.css";
 import { BrowserRouter, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import { UserSearch } from "./components/UserSearch";
-import { Main } from "./components/Main";
-import { SignUp } from "./components/SignUp";
+import { NavBar } from "./components/home/NavBar/NavBar";
+import { UserSearch } from "./components/compare/UserSearch/UserSearch";
+import { Main } from "./components/home/Main/Main";
+import { SignUp } from "./components/signUp/SignUp/SignUp";
 import { UserProvider } from "./components/UserContext";
-import { MostWanted } from "./components/MostWanted";
-
+import { MostWanted } from "./components/wanted/MostWanted/MostWanted";
 function App() {
   return (
     <div>

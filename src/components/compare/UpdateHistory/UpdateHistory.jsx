@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Dropdown } from "./Dropdown";
-import { YearInput } from "./YearInput";
-import { DeleteHistory } from "./DeleteHistory";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { YearInput } from "../YearInput/YearInput";
+import { DeleteHistory } from "../DeleteHistory/DeleteHistory";
 
 export const UpdateHistory = ({
   id,
@@ -21,7 +21,7 @@ export const UpdateHistory = ({
 
   const onHandleChange = (e, option) => {
     setAlert(false);
-    console.log(e);
+
     switch (option) {
       case "one":
         setStateOne(e);

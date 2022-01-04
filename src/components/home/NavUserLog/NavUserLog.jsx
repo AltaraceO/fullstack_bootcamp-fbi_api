@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
 
 export const NavUserLog = () => {

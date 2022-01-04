@@ -1,6 +1,6 @@
-import { allStates } from "../data";
+import { allStates } from "../../../data";
 import React, { useState } from "react";
-import { UpdateHistory } from "./UpdateHistory";
+import { UpdateHistory } from "../UpdateHistory/UpdateHistory";
 
 const getCrimeStr = (item) => {
   const newItem = item.split("_").join(" ");

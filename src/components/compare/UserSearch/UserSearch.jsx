@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
-import { FbiCall } from "./FbiCall";
-import { Dropdown } from "./Dropdown";
-import { PreviousSearches } from "./PreviousSearches";
-import { UserContext } from "./UserContext";
+import { FbiCall } from "../FbiCall/FbiCall";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { PreviousSearches } from "../PreviousSearches/PreviousSearches";
+import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
-import { YearInput } from "./YearInput";
-import { AddSearch } from "./AddSearch";
+import { YearInput } from "../YearInput/YearInput";
+import { AddSearch } from "../AddSearch/AddSearch";
 
 export const UserSearch = () => {
   const [current] = useContext(UserContext)["currUser"];

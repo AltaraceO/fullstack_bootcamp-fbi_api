@@ -1,9 +1,10 @@
 import axios from "axios";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../UserContext";
 import React, { useEffect, useState, useContext } from "react";
-import { DisplayWanted } from "./DisplayWanted";
+import { DisplayWanted } from "../DisplayWanted/DisplayWanted";
 import { Link } from "react-router-dom";
-import { PageNumbers } from "./PageNumbers";
+import { PageNumbers } from "../PageNumbers/PageNumbers";
+import "../DisplayWanted/wanted-cards.css";
 
 export const MostWanted = () => {
   const [current] = useContext(UserContext)["currUser"];
@@ -42,10 +43,10 @@ export const MostWanted = () => {
 
   return (
     <div>
-      <div>
-        <PageNumbers changePage={changePage} />
+      <PageNumbers changePage={changePage} />
+      <div className="wanted-container">
         {wantedData && current ? (
-          <div>
+          <div className="wanted-container">
             <DisplayWanted data={wantedData} />
           </div>
         ) : current ? (
