@@ -74,7 +74,7 @@ export const UserSearch = () => {
             View Results
           </div>
         ) : (
-          <Link className="ui basic button" to="/signup/">
+          <Link className="main-button" to="/signup/">
             Sign up or Log in
           </Link>
         )}

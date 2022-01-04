@@ -41,7 +41,7 @@ export const DeleteHistory = ({ id }) => {
   }, [setCurrent, tempUserObj, tempId]);
 
   return (
-    <div>
+    <div className="inline">
       <button className="main-button" onClick={newSearchesArr}>
         Delete Search
       </button>

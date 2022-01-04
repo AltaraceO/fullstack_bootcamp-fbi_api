@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { YearInput } from "../YearInput/YearInput";
 import { DeleteHistory } from "../DeleteHistory/DeleteHistory";
+import "./updateHistory.css";
 
 export const UpdateHistory = ({
   id,
@@ -78,14 +79,16 @@ export const UpdateHistory = ({
           All fields must have a value before changing
         </div>
       )}
-      <button className="main-button" onClick={cancelClick}>
-        Cancel
-      </button>
-      <button className="main-button" onClick={updateClick}>
-        Change
-      </button>
+      <div>
+        <button className="main-button" onClick={cancelClick}>
+          Cancel
+        </button>
+        <button className="main-button" onClick={updateClick}>
+          Change
+        </button>
 
-      <DeleteHistory className="main-button" id={id} />
+        <DeleteHistory className="main-button" id={id} />
+      </div>
     </div>
   );
 
