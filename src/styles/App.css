@@ -5,12 +5,6 @@
   display: flex;
 }
 
-.main-links {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-}
-
 .nav-bar {
   padding: 10px;
   max-width: 1200px;
@@ -29,12 +23,6 @@
   max-width: 1200px;
 }
 
-.myDropdown {
-  width: 100px;
-  border-radius: 5px;
-  background: white;
-}
-
 .existing-user {
   margin-bottom: 2rem;
   display: flex;
@@ -42,18 +30,41 @@
 }
 
 .main-button {
-  border: lightgray solid 1px;
-  border-radius: 2px;
-  padding: 6px 10px;
+  border: gray solid 1px;
+  border-radius: 3px;
+  padding: 8px 18px;
   background: transparent;
-  color: gray;
+  color: black;
   margin: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .main-button:hover {
-  border: gray solid 1px;
   color: darkslategray;
+  background: rgb(248, 247, 247);
   cursor: pointer;
+}
+
+.main-button:disabled {
+  color: lightgray;
+  border: lightgray solid 1px;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.main-input {
+  padding: 8px 18px;
+  margin: 5px;
+  border: 1px solid #141c33;
+  border-radius: 3px;
+}
+.main-input:focus {
+  outline: 3px solid rgb(238, 235, 235);
+}
+
+.main-input:disabled {
+  color: lightgray;
+  border: lightgray solid 1px;
 }
 
 .alert {
@@ -62,6 +73,8 @@
   border: 1px solid #eb677d;
   padding: 6px 10px;
   color: #eb677d;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .success {
@@ -72,9 +85,7 @@
   color: lightgreen;
 }
 
-.red-blue {
-  border: solid blue 1px;
-}
-.red-box {
-  border: solid red 1px;
+.red {
+  color: red;
+  border: solid 1px red;
 }

@@ -17,12 +17,19 @@ export const DeleteAccount = ({ resetAlert }) => {
     }
   };
 
+  const cancelDelete = () => {
+    resetAlert();
+  };
+
   return (
     <div>
       <div className="alert">
         <div>All search history will be deleted. Are you sure? </div>
-        <button onClick={deleteUser} className="main-button">
+        <button onClick={deleteUser} className="main-button red">
           Delete
+        </button>
+        <button onClick={cancelDelete} className="main-button">
+          Cancel
         </button>
       </div>
     </div>

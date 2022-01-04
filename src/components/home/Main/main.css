@@ -1,0 +1,14 @@
+.intro {
+  border: #141c33 1px solid;
+  text-align: left;
+  border-radius: 2px;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.main-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}

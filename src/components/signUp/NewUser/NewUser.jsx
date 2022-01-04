@@ -63,13 +63,18 @@ export const NewUser = () => {
       </div>
 
       <input
+        className="main-input"
         type="text"
         placeholder="Must only contain letters"
         value={newName}
         onChange={newNameHandle}
       />
 
-      <button onClick={onClickHandle} disabled={current ? true : false}>
+      <button
+        className="main-button"
+        onClick={onClickHandle}
+        disabled={current ? true : false}
+      >
         Sign Up
       </button>
 

@@ -42,7 +42,8 @@ export const SignUp = () => {
       <div className="existing-user">
         {/* <div className={`ui  ${!current ? "" : "disabled"} input focus`}> */}
         <input
-          disabled={!current ? false : true}
+          className="main-input"
+          disabled={current ? true : false}
           type="text"
           value={nameSearch}
           onChange={onChangeHandle}
@@ -51,14 +52,14 @@ export const SignUp = () => {
         {/* </div> */}
 
         <button
-          className={`ui  ${
-            nameSearch || !current ? "" : "disabled"
-          } basic button`}
+          disabled={current ? true : false}
+          className="main-button"
           onClick={checkUser}
         >
-          <i className="icon user"></i>
+          {/* <i className="icon user"></i> */}
           {current ? `Hi ${current.user}` : "Log in"}
         </button>
+
         {alert && <div className="alert">No user by this name</div>}
         {current && (
           <div className="three-buttons">
