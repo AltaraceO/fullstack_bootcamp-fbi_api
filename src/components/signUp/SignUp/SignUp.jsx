@@ -38,9 +38,8 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="signup-main">
+    <div>
       <div className="existing-user">
-        {/* <div className={`ui  ${!current ? "" : "disabled"} input focus`}> */}
         <input
           className="main-input"
           disabled={current ? true : false}
@@ -49,14 +48,12 @@ export const SignUp = () => {
           onChange={onChangeHandle}
           placeholder="Existing user?"
         />
-        {/* </div> */}
 
         <button
           disabled={current ? true : false}
           className="main-button"
           onClick={checkUser}
         >
-          {/* <i className="icon user"></i> */}
           {current ? `Hi ${current.user}` : "Log in"}
         </button>
 
@@ -80,6 +77,7 @@ export const SignUp = () => {
         )}
       </div>
       {deleteAcc && <DeleteAccount resetAlert={onDeleteHandle} />}
+
       {!current && <NewUser />}
     </div>
   );

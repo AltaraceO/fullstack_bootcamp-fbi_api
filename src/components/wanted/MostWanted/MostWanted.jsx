@@ -52,7 +52,7 @@ export const MostWanted = () => {
         ) : current ? (
           ""
         ) : (
-          <Link className="ui basic button" to="/signup/">
+          <Link className="main-button" to="/signup/">
             Sign up or Log in
           </Link>
         )}
