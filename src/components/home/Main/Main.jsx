@@ -56,20 +56,21 @@ export const Main = () => {
 
         <p>
           Read more and get your own API key{" "}
-          <a
-            href="https://crime-data-explorer.fr.cloud.gov/pages/docApi"
+          <Link
+            to={{
+              pathname: "https://crime-data-explorer.fr.cloud.gov/pages/docApi",
+            }}
             target="_blank"
-            rel="noreferrer"
           >
             here
-          </a>
+          </Link>
         </p>
         <hr />
         <p>
           To submit a tip to the FBI{" "}
-          <a href="https://www.fbi.gov/tips" target="_blank" rel="noreferrer">
-            click here
-          </a>
+          <Link to={{ pathname: "https://www.fbi.gov/tips" }} target="_blank">
+            click
+          </Link>
         </p>
       </div>
     </div>
