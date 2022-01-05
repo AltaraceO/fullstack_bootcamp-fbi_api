@@ -45,4 +45,33 @@
   .nav-left {
     gap: 20px;
   }
+  .nav-right {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.welcome-msg {
+  white-space: nowrap;
+  color: white;
+  /* display: inline-block; */
+}
+
+.is-current {
+  /* display: inline-block; */
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 3px;
+  padding: 8px 18px;
+  color: white;
+  background: transparent;
+  border: #22293d 2px solid;
+  margin: 5px;
+}
+.is-current:hover {
+  border: solid 2px gray;
+  background: #22293d;
+  color: rgb(206, 203, 203);
+  cursor: pointer;
 }

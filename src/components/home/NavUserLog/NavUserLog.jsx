@@ -9,16 +9,16 @@ export const NavUserLog = () => {
   const logUserOut = () => {
     setCurrent("");
   };
-  console.log(current.user);
+
   return (
     <>
       {current ? (
-        <div>
-          <span>Hi {current.user}</span>
-          <span className="nav-button" onClick={logUserOut}>
+        <>
+          <span className="welcome-msg">Hi {current.user}</span>
+          <span className="is-current" onClick={logUserOut}>
             Log out
           </span>
-        </div>
+        </>
       ) : (
         <Link className="nav-button" to="/signup/">
           Log in
