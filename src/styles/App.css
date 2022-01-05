@@ -42,7 +42,6 @@
 }
 
 .main-button {
-  /* height: 33px; */
   white-space: nowrap;
   text-align: center;
   border: gray solid 1px;
@@ -87,7 +86,6 @@
   margin: 5px;
   background: white;
   width: 100%;
-  /* border: 1px solid #141c33; */
   outline: none;
   border-radius: 3px;
   appearance: none;
@@ -114,4 +112,8 @@
 .red {
   color: red;
   border: solid 1px red;
+}
+
+.h4-heading {
+  font-weight: 800;
 }

@@ -61,6 +61,7 @@ export const NewUser = () => {
       <div>
         <h4>To sign up, simply enter your name</h4>
       </div>
+      <br />
       <div className="existing-user">
         <input
           className="main-input"
