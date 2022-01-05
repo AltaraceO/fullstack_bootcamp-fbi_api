@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { allStates } from "../../../data";
+import "./render-stat.css";
 
 export const RenderStatistics = ({ data, crime, year }) => {
   const [stateName, setStateName] = useState("");
@@ -64,16 +65,14 @@ export const RenderStatistics = ({ data, crime, year }) => {
     <div>
       {data && (
         <div>
-          <div className="ui statistic">
-            <div className="label">{stateName}</div>
-          </div>
-
-          <div className="ui statistic">
-            <div>
-              {crimeNumberStr} {crimeString}s in {year}.
+          <div className="state-name">{stateName}</div>
+          <div className="info">
+            <div className="outline">
+              <span className="dry-num"> {crimeNumberStr}</span> {crimeString}s
+              in {year}.
             </div>
 
-            <div className="value">{percentage} </div>
+            <div className="calc">{percentage} </div>
             <span> per 100,000 population</span>
           </div>
         </div>

@@ -88,11 +88,11 @@ export const UserSearch = () => {
       )}
 
       {search && current ? (
-        <div className="ui horizontal segments">
-          <div className="ui segment">
+        <div className="display-stats">
+          <div className="one-call">
             <FbiCall state={stateOne} crime={crime} year={year} />
           </div>
-          <div className="ui segment">
+          <div className="one-call">
             <FbiCall state={stateTwo} crime={crime} year={year} />
           </div>
           <AddSearch
