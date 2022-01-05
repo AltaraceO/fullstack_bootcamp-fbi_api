@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const PageNumbers = ({ changePage }) => {
+  const [currentNum, setCurrentNum] = useState("");
+
   const pageClicks = (e) => {
     const value = Number(e.target.textContent);
     changePage(value);
+    setCurrentNum(value);
   };
 
   const pages = () => {
@@ -16,6 +19,7 @@ export const PageNumbers = ({ changePage }) => {
         <span
           key={i}
           value={i + 1}
+          style={{ color: currentNum === i + 1 ? "red" : " black" }}
           className="page-numbers"
           onClick={pageClicks}
         >

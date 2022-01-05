@@ -43,7 +43,8 @@ export const MostWanted = () => {
 
   return (
     <div>
-      <PageNumbers changePage={changePage} />
+      {current && <PageNumbers changePage={changePage} />}
+
       <div className="wanted-container">
         {wantedData && current ? (
           <div className="wanted-container">
