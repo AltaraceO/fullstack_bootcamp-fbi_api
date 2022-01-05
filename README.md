@@ -22,17 +22,17 @@ https://mockapi.io/
 
 ### `Technologies and techniques implemented`
 
-All HTML and CSS features are my own. Used media queries to make sure that the site is responsive.
+- All **HTML** and **CSS** features are my own. Used media queries to make sure that the site is responsive.
 
-Used CRUD in order to create, read, update, and delete new users, as well as update their search history. All the information was maintained in the MockAPI object for each unique user.
+- Used **CRUD** in order to create, read, update, and delete new users, as well as update their search history. All the information was maintained in the MockAPI object for each unique user.
 
-Used React Routes and Links for navigation between pages
+- Used **React Routes** and **Links** for navigation between pages
 
-Used the useEffect and Hook features when moving and storing data. In different locations that make API calls, I used a Controller to abort the call when a component is destroyed.
+- Used the **useEffect** and **Hook** features when moving and storing data. In different locations that make API calls, I used a **Controller** to abort the call when a component is destroyed.
 
-Learned and Implemented the wonders of createContext to share the ‘current user’ state between different components that used it and updated it throughout.
+- Learned and Implemented the wonders of **createContext** to share the ‘current user’ state between different components that used it and updated it throughout.
 
-Made full use of conditional rendering to disable buttons, show alerts and toggle between different options.
+- Made full use of conditional rendering to disable buttons, show alerts and toggle between different options.
 
 ### `What I learned most`
 
