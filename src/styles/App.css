@@ -104,9 +104,9 @@
 .success {
   margin: 5px;
   border-radius: 2px;
-  border: 1px solid lightgreen;
+  border: 1px solid teal;
   padding: 6px 10px;
-  color: lightgreen;
+  color: teal;
 }
 
 .red {

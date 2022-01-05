@@ -55,7 +55,7 @@ export const Main = () => {
         </p>
 
         <p>
-          Read more and get your own API key
+          Read more and get your own API key{" "}
           <a
             href="https://crime-data-explorer.fr.cloud.gov/pages/docApi"
             target="_blank"

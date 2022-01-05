@@ -54,12 +54,11 @@
 
 .welcome-msg {
   white-space: nowrap;
-  color: white;
-  /* display: inline-block; */
+  color: teal;
+  font-weight: 500;
 }
 
 .is-current {
-  /* display: inline-block; */
   white-space: nowrap;
   text-align: center;
   border-radius: 3px;

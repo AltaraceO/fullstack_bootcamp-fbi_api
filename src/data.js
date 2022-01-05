@@ -191,10 +191,6 @@ export const allStates = [
     category: "VT",
   },
   {
-    name: "Virgin Islands",
-    category: "VI",
-  },
-  {
     name: "Virginia",
     category: "VA",
   },
