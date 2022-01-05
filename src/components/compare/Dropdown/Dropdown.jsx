@@ -17,7 +17,7 @@ export const Dropdown = ({ func, option, item }) => {
 
   return (
     <div>
-      <select className="ui dropdown myDropdown" onChange={onHandleChange}>
+      <select className="main-dropdown" onChange={onHandleChange}>
         <option value="">Select</option>
         {allOptions}
       </select>

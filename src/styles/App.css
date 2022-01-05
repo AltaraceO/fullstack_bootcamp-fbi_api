@@ -70,6 +70,17 @@
   border: lightgray solid 1px;
 }
 
+.main-dropdown {
+  padding: 8px 18px;
+  margin: 5px;
+  background: white;
+  width: 100%;
+  /* border: 1px solid #141c33; */
+  outline: none;
+  border-radius: 3px;
+  appearance: none;
+}
+
 .alert {
   margin: 5px;
   border-radius: 2px;

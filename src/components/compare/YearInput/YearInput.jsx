@@ -19,9 +19,13 @@ export const YearInput = ({ yearMain }) => {
 
   return (
     <div>
-      <label>Year</label>
+      <input
+        className="main-input"
+        type="number"
+        onChange={onInputChange}
+        value={year}
+      />
 
-      <input type="number" onChange={onInputChange} value={year} />
       {alert && <div className="alert">Not in range (1980-2020)</div>}
     </div>
   );

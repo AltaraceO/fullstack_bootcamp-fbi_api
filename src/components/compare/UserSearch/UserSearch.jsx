@@ -6,6 +6,7 @@ import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
 import { YearInput } from "../YearInput/YearInput";
 import { AddSearch } from "../AddSearch/AddSearch";
+import "./user-search.css";
 
 export const UserSearch = () => {
   const [current] = useContext(UserContext)["currUser"];
@@ -45,61 +46,69 @@ export const UserSearch = () => {
 
   return (
     <div>
-      <div className="ui large form">
-        <div className="two fields">
-          <div className="field">
-            <label>First State</label>
-            <Dropdown func={onHandleChange} option="one" item={true} />
-          </div>
-          <div className="field">
-            <label>Second State</label>
-            <Dropdown func={onHandleChange} option="two" item={true} />
-          </div>
+      {/* <div className="ui large form"> */}
+      <div className="state-selections">
+        <div className="each-state">
+          <label className="state-lable">First State</label>
+          <Dropdown func={onHandleChange} option="one" item={true} />
         </div>
-        <div className="two fields">
-          <div className="field">
-            <label>Crime Category</label>
-            <Dropdown func={onHandleChange} option="three" item={false} />
-          </div>
-          <div className="field">
-            <YearInput yearMain={setYear} />
-          </div>
+        <div className="each-state">
+          <label className="state-lable">Second State</label>
+          <Dropdown func={onHandleChange} option="two" item={true} />
+        </div>
+      </div>
+
+      <div className="category-selections">
+        <div>
+          <label className="state-lable">Crime Category</label>
+          <Dropdown func={onHandleChange} option="three" item={false} />
         </div>
 
-        {current ? (
-          <div
-            className={`ui  ${!checkFields() && "disabled"} basic button`}
-            onClick={onSearchClick}
-          >
-            View Results
-          </div>
-        ) : (
+        <div>
+          <label className="state-lable">Year</label>
+          <YearInput yearMain={setYear} />
+        </div>
+      </div>
+      <br />
+
+      {current ? (
+        <button
+          disabled={checkFields() ? false : true}
+          className="main-button"
+          onClick={onSearchClick}
+        >
+          View Results
+        </button>
+      ) : (
+        <div>
           <Link className="main-button" to="/signup/">
             Sign up or Log in
           </Link>
-        )}
+        </div>
+      )}
 
-        {search && current ? (
-          <div className="ui horizontal segments">
-            <div className="ui segment">
-              <FbiCall state={stateOne} crime={crime} year={year} />
-            </div>
-            <div className="ui segment">
-              <FbiCall state={stateTwo} crime={crime} year={year} />
-            </div>
-            <AddSearch
-              crime={crime}
-              year={year}
-              stateOne={stateOne}
-              stateTwo={stateTwo}
-            />
+      {search && current ? (
+        <div className="ui horizontal segments">
+          <div className="ui segment">
+            <FbiCall state={stateOne} crime={crime} year={year} />
           </div>
-        ) : (
-          ""
-        )}
-        <div className="ui divider"></div>
-        {current && <PreviousSearches />}
-      </div>
+          <div className="ui segment">
+            <FbiCall state={stateTwo} crime={crime} year={year} />
+          </div>
+          <AddSearch
+            crime={crime}
+            year={year}
+            stateOne={stateOne}
+            stateTwo={stateTwo}
+          />
+        </div>
+      ) : (
+        ""
+      )}
+      <br />
+      <hr />
+      {current && <PreviousSearches />}
+      {/* </div> */}
     </div>
   );
 };
