@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Exploring all the possibilities of the FBI API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This site aims to take dry crime statistics by location, year, and category and present them in a more readable and relatable way. Making a very basic comparison between different states’ crime statistics. An extra feature is the ability to view hundreds of wanted adverts in a simple card form, these include a link to the FBI page of that particular instance.
 
-## Available Scripts
+## View on Netlify
 
-In the project directory, you can run:
+https://infallible-snyder-239f0f.netlify.app/
 
-### `npm start`
+### `APIs used`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+FBI Crime Data API --
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+https://crime-data-explorer.fr.cloud.gov/pages/docApi
 
-### `npm test`
+FBI most wanted API --
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://www.fbi.gov/wanted/api
 
-### `npm run build`
+MockAPI --
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://mockapi.io/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Technologies and techniques implemented`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All HTML and CSS features are my own. Used media queries to make sure that the site is responsive.
 
-### `npm run eject`
+Used CRUD in order to create, read, update, and delete new users, as well as update their search history. All the information was maintained in the MockAPI object for each unique user.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Used React Routes and Links for navigation between pages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Used the useEffect and Hook features when moving and storing data. In different locations that make API calls, I used a Controller to abort the call when a component is destroyed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Learned and Implemented the wonders of createContext to share the ‘current user’ state between different components that used it and updated it throughout.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Made full use of conditional rendering to disable buttons, show alerts and toggle between different options.
 
-## Learn More
+### `What I learned most`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The value of an organized and well-executed plan. Time management and clear goals made sure I was able to explore different options and arrive at a finished product.
