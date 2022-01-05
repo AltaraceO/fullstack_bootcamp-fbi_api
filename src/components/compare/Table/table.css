@@ -1,0 +1,8 @@
+td {
+  border-top: solid 1px rgb(238, 231, 231);
+  padding: 3px;
+}
+
+.item {
+  font-weight: 600;
+}

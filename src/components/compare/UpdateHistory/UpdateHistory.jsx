@@ -3,6 +3,7 @@ import { Dropdown } from "../Dropdown/Dropdown";
 import { YearInput } from "../YearInput/YearInput";
 import { DeleteHistory } from "../DeleteHistory/DeleteHistory";
 import "./updateHistory.css";
+import { Table } from "../Table/Table";
 
 export const UpdateHistory = ({
   id,
@@ -55,42 +56,33 @@ export const UpdateHistory = ({
   };
 
   const displayUpdate = (
-    <div>
-      <div className="ui horizontal segments">
-        <div className="ui  segment">
-          Crime
-          <Dropdown func={onHandleChange} option="three" item={false} />
-        </div>
-        <div className="ui segment">
-          First State
-          <Dropdown func={onHandleChange} option="one" item={true} />
-        </div>
-        <div className="ui segment">
-          Second State
-          <Dropdown func={onHandleChange} option="two" item={true} />
-        </div>
-        <div className="ui segment">
-          Year
-          <YearInput yearMain={setYear} />
-        </div>
-      </div>
-      {alert && (
-        <div className="alert">
-          All fields must have a value before changing
-        </div>
-      )}
-      <div>
-        <button className="main-button" onClick={cancelClick}>
-          Cancel
-        </button>
-        <button className="main-button" onClick={updateClick}>
-          Change
-        </button>
+    <>
+      <div className="update-card">
+        <Table
+          crime={<Dropdown func={onHandleChange} option="three" item={false} />}
+          stateOne={<Dropdown func={onHandleChange} option="one" item={true} />}
+          stateTwo={<Dropdown func={onHandleChange} option="two" item={true} />}
+          year={<YearInput yearMain={setYear} />}
+        />
 
-        <DeleteHistory className="main-button" id={id} />
+        <div className="buttons">
+          <button className="main-button" onClick={cancelClick}>
+            Cancel
+          </button>
+          <button className="main-button" onClick={updateClick}>
+            Change
+          </button>
+
+          <DeleteHistory className="main-button" id={id} />
+          {alert && (
+            <div className="alert">
+              All fields must have a value before changing
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 
-  return <div>{displayUpdate}</div>;
+  return <>{displayUpdate}</>;
 };

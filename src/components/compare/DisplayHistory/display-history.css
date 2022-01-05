@@ -1,19 +1,16 @@
-.inline {
-  display: inline;
-}
-
-.update-card {
+.history-card {
   border-radius: 3px;
   border: solid 1px lightgray;
   display: flex;
   justify-content: space-around;
+  width: 350px;
   margin: 15px;
   padding: 5px;
 }
 
-.buttons {
+button {
+  height: 25px;
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: right;
-  max-width: 200px;
+  align-items: center;
 }

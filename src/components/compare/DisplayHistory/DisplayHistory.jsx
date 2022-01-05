@@ -1,6 +1,8 @@
 import { allStates } from "../../../data";
 import React, { useState } from "react";
 import { UpdateHistory } from "../UpdateHistory/UpdateHistory";
+import "./display-history.css";
+import { Table } from "../Table/Table";
 
 const getCrimeStr = (item) => {
   const newItem = item.split("_").join(" ");
@@ -30,25 +32,20 @@ export const DisplayHistory = ({ search, id }) => {
   };
 
   const displayPrevSearch = (
-    <div>
-      <div className="ui horizontal segments">
-        <div className="ui  segment">
-          <p>Crime category: {crime}</p>
-        </div>
-        <div className="ui segment">
-          <p>First State: {stateOne}</p>
-        </div>
-        <div className="ui segment">
-          <p>Second State: {stateTwo}</p>
-        </div>
-        <div className="ui segment">
-          <p>Year: {year}</p>
-        </div>
+    <>
+      <div className="history-card">
+        <Table
+          crime={crime}
+          stateOne={stateOne}
+          stateTwo={stateTwo}
+          year={year}
+        />
+
+        <button className="main-button" onClick={changeVis}>
+          Update
+        </button>
       </div>
-      <button className="main-button" onClick={changeVis}>
-        Update
-      </button>
-    </div>
+    </>
   );
 
   if (visibility)
@@ -65,8 +62,8 @@ export const DisplayHistory = ({ search, id }) => {
       />
     );
   return (
-    <div>
+    <>
       <div>{displayPrevSearch}</div>
-    </div>
+    </>
   );
 };
