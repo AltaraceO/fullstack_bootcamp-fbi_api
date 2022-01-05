@@ -4,7 +4,7 @@ This site aims to take dry crime statistics by location, year, and category and 
 
 ## View on Netlify
 
-https://infallible-snyder-239f0f.netlify.app/
+https://fbi-crime-api.netlify.app
 
 ### `APIs used`
 
