@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
+import "../NavBar/nav.css";
 
 export const NavUserLog = () => {
   const [current, setCurrent] = useContext(UserContext)["currUser"];
@@ -8,18 +9,21 @@ export const NavUserLog = () => {
   const logUserOut = () => {
     setCurrent("");
   };
-
+  console.log(current.user);
   return (
-    <div>
+    <>
       {current ? (
-        <div className="ui item active" onClick={logUserOut}>
-          Log out
+        <div>
+          <span>Hi {current.user}</span>
+          <span className="nav-button" onClick={logUserOut}>
+            Log out
+          </span>
         </div>
       ) : (
-        <Link className="ui basic button inverted" to="/signup/">
+        <Link className="nav-button" to="/signup/">
           Log in
         </Link>
       )}
-    </div>
+    </>
   );
 };
