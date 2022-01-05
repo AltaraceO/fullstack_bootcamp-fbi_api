@@ -36,4 +36,4 @@ https://mockapi.io/
 
 ### `What I learned most`
 
-The value of an organized and well-executed plan. Time management and clear goals made sure I was able to explore different options and arrive at a finished product.
+The value of an organized and well-executed plan. Time management and clear goals ensured I was able to explore different options and arrive at a finished product.
