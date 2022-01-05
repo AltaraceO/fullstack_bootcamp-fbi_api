@@ -53,11 +53,23 @@ export const Main = () => {
           SRS data is the legacy format that provides aggregated counts of the
           reported crime offenses known to law enforcement by location.
         </p>
+
         <p>
-          Read more and get your own API key{" "}
-          <a href="https://crime-data-explorer.fr.cloud.gov/pages/docApi">
+          Read more and get your own API key
+          <a
+            href="https://crime-data-explorer.fr.cloud.gov/pages/docApi"
+            target="_blank"
+            rel="noreferrer"
+          >
             here
-          </a>{" "}
+          </a>
+        </p>
+        <hr />
+        <p>
+          To submit a tip to the FBI{" "}
+          <a href="https://www.fbi.gov/tips" target="_blank" rel="noreferrer">
+            click here
+          </a>
         </p>
       </div>
     </div>
