@@ -17,11 +17,11 @@
 }
 
 .info {
-  height: 80px;
+  max-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: left;
   text-align: right;
   justify-content: space-between;
-  gap: 3px;
+  gap: 15px;
 }
