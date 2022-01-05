@@ -73,6 +73,7 @@ export const NewUser = () => {
         <button
           className="main-button"
           onClick={onClickHandle}
+          style={{ height: 33 }}
           disabled={current ? true : false}
         >
           Sign Up

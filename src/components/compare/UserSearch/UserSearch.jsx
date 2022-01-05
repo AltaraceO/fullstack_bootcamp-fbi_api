@@ -75,7 +75,7 @@ export const UserSearch = () => {
         <button
           disabled={checkFields() ? false : true}
           className="main-button"
-          style={{ marginLeft: 20 }}
+          style={{ height: 33, marginLeft: 20 }}
           onClick={onSearchClick}
         >
           View Results

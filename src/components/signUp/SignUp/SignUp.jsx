@@ -53,6 +53,7 @@ export const SignUp = () => {
           disabled={current ? true : false}
           className="main-button"
           onClick={checkUser}
+          style={{ height: 33 }}
         >
           {current ? `Hi ${current.user}` : "Log in"}
         </button>
@@ -69,7 +70,11 @@ export const SignUp = () => {
               </Link>
             </div>
             <div>
-              <button className="main-button" onClick={onDeleteHandle}>
+              <button
+                className="main-button"
+                onClick={onDeleteHandle}
+                style={{ height: 33 }}
+              >
                 Delete account
               </button>
             </div>
