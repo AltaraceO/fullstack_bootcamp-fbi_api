@@ -11,4 +11,12 @@
   display: flex;
   justify-content: center;
   gap: 3rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .main-links {
+    flex-direction: column;
+    max-width: 200px;
+  }
 }

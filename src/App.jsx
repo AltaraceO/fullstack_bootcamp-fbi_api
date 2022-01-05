@@ -8,11 +8,11 @@ import { UserProvider } from "./components/UserContext";
 import { MostWanted } from "./components/wanted/MostWanted/MostWanted";
 function App() {
   return (
-    <div>
+    <div className="page-whole">
       <div className="entire-site">
         <BrowserRouter>
           <UserProvider>
-            <div>
+            <div className="full-div">
               <div className="nav-bar">
                 <NavBar />
               </div>

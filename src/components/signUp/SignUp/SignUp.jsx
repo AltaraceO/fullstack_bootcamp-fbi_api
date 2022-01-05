@@ -38,7 +38,7 @@ export const SignUp = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="existing-user">
         <input
           className="main-input"
@@ -79,6 +79,6 @@ export const SignUp = () => {
       {deleteAcc && <DeleteAccount resetAlert={onDeleteHandle} />}
 
       {!current && <NewUser />}
-    </div>
+    </>
   );
 };
