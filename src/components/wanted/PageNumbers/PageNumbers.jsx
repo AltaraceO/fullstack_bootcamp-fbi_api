@@ -19,7 +19,10 @@ export const PageNumbers = ({ changePage }) => {
         <span
           key={i}
           value={i + 1}
-          style={{ color: currentNum === i + 1 ? "red" : " black" }}
+          style={{
+            color: currentNum === i + 1 ? "red" : " black",
+            fontSize: currentNum === i + 1 ? 18 : 14,
+          }}
           className="page-numbers"
           onClick={pageClicks}
         >
