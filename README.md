@@ -1,4 +1,4 @@
-# Exploring all the possibilities of the FBI API
+# Exploring all the possibilities of the FBI REST API
 
 This site aims to take dry crime statistics by location, year, and category and present them in a more readable and relatable way. Making a very basic comparison between different states’ crime statistics. An extra feature is the ability to view hundreds of wanted adverts in a simple card form, these include a link to the FBI page of that particular instance.
 
@@ -22,9 +22,7 @@ https://mockapi.io/
 
 ### `Technologies and techniques implemented`
 
-- All **HTML** and **CSS** features are my own. Used media queries to make sure that the site is responsive.
-
-- Used **CRUD** in order to create, read, update, and delete new users, as well as update their search history. All the information was maintained in the MockAPI object for each unique user.
+- Used **CRUD** operations in order to create, read, update, and delete new users, as well as update their search history. All the information was maintained in the MockAPI object for each unique user.
 
 - Used **React Routes** and **Links** for navigation between pages
 
@@ -34,6 +32,8 @@ https://mockapi.io/
 
 - Made full use of conditional rendering to disable buttons, show alerts and toggle between different options.
 
+- All **HTML** and **CSS** features are my own. Used media queries to make sure that the site is responsive.
+
 ### `What I learned most`
 
-The value of an organized and well-executed plan. Time management and clear goals ensured I was able to explore different options and arrive at a finished product.
+The value of an organized and well-executed plan. Time management and clear goals ensured I was able to explore different options and arrive at a finished product within the allotted time.
