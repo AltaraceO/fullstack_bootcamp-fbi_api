@@ -32,7 +32,7 @@ https://mockapi.io/
 
 - Made full use of conditional rendering to disable buttons, show alerts and toggle between different options.
 
-- All **HTML** and **CSS** features are my own. Used media queries to make sure that the site is responsive.
+- Used only vanilla **CSS**. I did not use any framework or any library. The site is responsive by use of **media queries**.
 
 ### `What I learned most`
 
